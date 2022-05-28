@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>11 Week 4 Wednesday | Computer Science 32: Data Structures</title>
+  <meta name="description" content="Computer Science notes" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="11 Week 4 Wednesday | Computer Science 32: Data Structures" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Computer Science notes" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="11 Week 4 Wednesday | Computer Science 32: Data Structures" />
+  
+  <meta name="twitter:description" content="Computer Science notes" />
+  
+
+<meta name="author" content="Jason Lim" />
+
+
+<meta name="date" content="2021-06-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-4-monday-lecture.html"/>
+<link rel="next" href="week-5-monday-lecture.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">CS32 Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html"><i class="fa fa-check"></i><b>2</b> Week 1 Wednesday Pre-Lecture</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#why-we-dont-write-public-data-members"><i class="fa fa-check"></i><b>2.1</b> Why we don’t write public data members</a></li>
+<li class="chapter" data-level="2.2" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#const-member-functions"><i class="fa fa-check"></i><b>2.2</b> <code>const</code> Member Functions</a></li>
+<li class="chapter" data-level="2.3" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#alternate-constructor-stucture"><i class="fa fa-check"></i><b>2.3</b> Alternate Constructor Stucture</a></li>
+<li class="chapter" data-level="2.4" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#order-of-construction"><i class="fa fa-check"></i><b>2.4</b> Order of Construction</a></li>
+<li class="chapter" data-level="2.5" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#separate-compilation"><i class="fa fa-check"></i><b>2.5</b> Separate Compilation</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#header-file-include-practices"><i class="fa fa-check"></i><b>2.5.1</b> Header File Include Practices</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html"><i class="fa fa-check"></i><b>3</b> Week 1 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html#constants-pointers-and-constant-pointers"><i class="fa fa-check"></i><b>3.1</b> Constants, pointers, and constant pointers</a></li>
+<li class="chapter" data-level="3.2" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html#default-constructors"><i class="fa fa-check"></i><b>3.2</b> Default Constructors</a></li>
+<li class="chapter" data-level="3.3" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html#new-and-variable-lifecycle"><i class="fa fa-check"></i><b>3.3</b> <code>new</code> and Variable Lifecycle</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html"><i class="fa fa-check"></i><b>4</b> Week 2 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#separate-compilation-issues"><i class="fa fa-check"></i><b>4.1</b> Separate Compilation Issues</a></li>
+<li class="chapter" data-level="4.2" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#example-project"><i class="fa fa-check"></i><b>4.2</b> Example Project</a></li>
+<li class="chapter" data-level="4.3" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#include-guard-rules"><i class="fa fa-check"></i><b>4.3</b> Include Guard Rules</a></li>
+<li class="chapter" data-level="4.4" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#pointer-example"><i class="fa fa-check"></i><b>4.4</b> Pointer Example</a></li>
+<li class="chapter" data-level="4.5" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#incomplete-type-declaration"><i class="fa fa-check"></i><b>4.5</b> Incomplete Type Declaration</a></li>
+<li class="chapter" data-level="4.6" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#resource-management"><i class="fa fa-check"></i><b>4.6</b> Resource Management</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="week-2-monday-qa.html"><a href="week-2-monday-qa.html"><i class="fa fa-check"></i><b>5</b> Week 2 Monday Q&amp;A</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="week-2-monday-qa.html"><a href="week-2-monday-qa.html#destructor-cycle"><i class="fa fa-check"></i><b>5.1</b> Destructor Cycle</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html"><i class="fa fa-check"></i><b>6</b> Week 2 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html#copying"><i class="fa fa-check"></i><b>6.1</b> Copying</a></li>
+<li class="chapter" data-level="6.2" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html#assignment"><i class="fa fa-check"></i><b>6.2</b> Assignment</a></li>
+<li class="chapter" data-level="6.3" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html#aliasing"><i class="fa fa-check"></i><b>6.3</b> Aliasing</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="week-2-wednesday-qa.html"><a href="week-2-wednesday-qa.html"><i class="fa fa-check"></i><b>7</b> Week 2 Wednesday Q&amp;A</a></li>
+<li class="chapter" data-level="8" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html"><i class="fa fa-check"></i><b>8</b> Week 3 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#introduction-to-linked-lists"><i class="fa fa-check"></i><b>8.1</b> Introduction to Linked Lists</a></li>
+<li class="chapter" data-level="8.2" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#first-link-list-implementation"><i class="fa fa-check"></i><b>8.2</b> First Link List Implementation</a></li>
+<li class="chapter" data-level="8.3" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#linked-list-iteration"><i class="fa fa-check"></i><b>8.3</b> Linked List Iteration</a></li>
+<li class="chapter" data-level="8.4" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#finding-a-specific-value"><i class="fa fa-check"></i><b>8.4</b> Finding a Specific value</a></li>
+<li class="chapter" data-level="8.5" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#getting-rid-of-a-node"><i class="fa fa-check"></i><b>8.5</b> Getting Rid of a Node</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html"><i class="fa fa-check"></i><b>9</b> Week 3 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#stacks-in-c"><i class="fa fa-check"></i><b>9.1</b> Stacks in c++</a></li>
+<li class="chapter" data-level="9.2" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#queues-in-c"><i class="fa fa-check"></i><b>9.2</b> Queues in c++</a></li>
+<li class="chapter" data-level="9.3" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#motivating-example-for-stacks"><i class="fa fa-check"></i><b>9.3</b> Motivating Example for Stacks</a></li>
+<li class="chapter" data-level="9.4" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#implementing-stacks-with-arrayslists"><i class="fa fa-check"></i><b>9.4</b> Implementing Stacks with Arrays/Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html"><i class="fa fa-check"></i><b>10</b> Week 4 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#implementing-queue-with-an-array"><i class="fa fa-check"></i><b>10.1</b> Implementing Queue with an Array</a></li>
+<li class="chapter" data-level="10.2" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#polymorphism"><i class="fa fa-check"></i><b>10.2</b> Polymorphism</a></li>
+<li class="chapter" data-level="10.3" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#implementation-of-polymorphism"><i class="fa fa-check"></i><b>10.3</b> Implementation of Polymorphism</a></li>
+<li class="chapter" data-level="10.4" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#static-and-dynamic-binding"><i class="fa fa-check"></i><b>10.4</b> Static and Dynamic Binding</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html"><i class="fa fa-check"></i><b>11</b> Week 4 Wednesday</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html#dynamic-lookup"><i class="fa fa-check"></i><b>11.1</b> Dynamic Lookup</a></li>
+<li class="chapter" data-level="11.2" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html#abstract-classes"><i class="fa fa-check"></i><b>11.2</b> Abstract Classes</a></li>
+<li class="chapter" data-level="11.3" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html#multiple-inheritance"><i class="fa fa-check"></i><b>11.3</b> Multiple Inheritance?</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html"><i class="fa fa-check"></i><b>12</b> Week 5 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html#motivating-recursion"><i class="fa fa-check"></i><b>12.1</b> Motivating Recursion</a></li>
+<li class="chapter" data-level="12.2" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html#introduction-to-recursion"><i class="fa fa-check"></i><b>12.2</b> Introduction to Recursion</a></li>
+<li class="chapter" data-level="12.3" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html#implementing-the-merge-sort"><i class="fa fa-check"></i><b>12.3</b> Implementing the Merge Sort</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html"><i class="fa fa-check"></i><b>13</b> Week 5 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#pointers-and-arrays"><i class="fa fa-check"></i><b>13.1</b> Pointers and Arrays</a></li>
+<li class="chapter" data-level="13.2" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#infinite-recursion"><i class="fa fa-check"></i><b>13.2</b> Infinite Recursion</a></li>
+<li class="chapter" data-level="13.3" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#types-of-recursive-problems"><i class="fa fa-check"></i><b>13.3</b> Types of Recursive Problems</a></li>
+<li class="chapter" data-level="13.4" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#common-mistakes-in-recursion"><i class="fa fa-check"></i><b>13.4</b> Common Mistakes in Recursion</a></li>
+<li class="chapter" data-level="13.5" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#templates"><i class="fa fa-check"></i><b>13.5</b> Templates</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html"><i class="fa fa-check"></i><b>14</b> Week 6 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#more-issues-with-templates"><i class="fa fa-check"></i><b>14.1</b> More issues with Templates</a></li>
+<li class="chapter" data-level="14.2" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#template-classes"><i class="fa fa-check"></i><b>14.2</b> Template Classes</a></li>
+<li class="chapter" data-level="14.3" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#stl"><i class="fa fa-check"></i><b>14.3</b> STL</a></li>
+<li class="chapter" data-level="14.4" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#vector"><i class="fa fa-check"></i><b>14.4</b> Vector</a></li>
+<li class="chapter" data-level="14.5" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#linked-lists"><i class="fa fa-check"></i><b>14.5</b> Linked Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="week-6-wednesday-stl-and-algorithms.html"><a href="week-6-wednesday-stl-and-algorithms.html"><i class="fa fa-check"></i><b>15</b> Week 6 Wednesday: STL and Algorithms</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="week-6-wednesday-stl-and-algorithms.html"><a href="week-6-wednesday-stl-and-algorithms.html#standard-algorithms"><i class="fa fa-check"></i><b>15.1</b> Standard Algorithms</a></li>
+<li class="chapter" data-level="15.2" data-path="week-6-wednesday-stl-and-algorithms.html"><a href="week-6-wednesday-stl-and-algorithms.html#algorithm-analysis"><i class="fa fa-check"></i><b>15.2</b> Algorithm Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="week-7-monday-lecture.html"><a href="week-7-monday-lecture.html"><i class="fa fa-check"></i><b>16</b> Week 7 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="week-7-monday-lecture.html"><a href="week-7-monday-lecture.html#applications-of-algorithm-analysis-sorting"><i class="fa fa-check"></i><b>16.1</b> Applications of Algorithm Analysis: Sorting</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="week-7-wednesday-sorting-trees.html"><a href="week-7-wednesday-sorting-trees.html"><i class="fa fa-check"></i><b>17</b> Week 7 Wednesday: Sorting, Trees</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="week-7-wednesday-sorting-trees.html"><a href="week-7-wednesday-sorting-trees.html#improving-quicksort"><i class="fa fa-check"></i><b>17.1</b> Improving Quicksort</a></li>
+<li class="chapter" data-level="17.2" data-path="week-7-wednesday-sorting-trees.html"><a href="week-7-wednesday-sorting-trees.html#trees"><i class="fa fa-check"></i><b>17.2</b> Trees</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="week-8-monday-trees.html"><a href="week-8-monday-trees.html"><i class="fa fa-check"></i><b>18</b> Week 8 Monday: Trees</a></li>
+<li class="chapter" data-level="19" data-path="week-8-wednesday-hash-tables.html"><a href="week-8-wednesday-hash-tables.html"><i class="fa fa-check"></i><b>19</b> Week 8 Wednesday: Hash Tables</a></li>
+<li class="chapter" data-level="20" data-path="week-9-monday-lecture-more-hashtables.html"><a href="week-9-monday-lecture-more-hashtables.html"><i class="fa fa-check"></i><b>20</b> Week 9 Monday Lecture: More Hashtables</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="week-9-monday-lecture-more-hashtables.html"><a href="week-9-monday-lecture-more-hashtables.html#more-stl-data-structures"><i class="fa fa-check"></i><b>20.1</b> More STL Data Structures</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="week-9-wednesday-lecture-heaps.html"><a href="week-9-wednesday-lecture-heaps.html"><i class="fa fa-check"></i><b>21</b> Week 9 Wednesday Lecture: Heaps</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Computer Science 32: Data Structures</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week-4-wednesday" class="section level1" number="11">
+<h1><span class="header-section-number">11</span> Week 4 Wednesday</h1>
+<div id="dynamic-lookup" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Dynamic Lookup</h2>
+<p>Some driver code to illustrate how the compiler matches the right function bodies with a seemingly ambiguous function call/</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb54-1"><a href="week-4-wednesday.html#cb54-1" aria-hidden="true" tabindex="-1"></a>Shape<span class="op">*</span> sp<span class="op">;</span></span>
+<span id="cb54-2"><a href="week-4-wednesday.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>someCondition<span class="op">)</span></span>
+<span id="cb54-3"><a href="week-4-wednesday.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb54-4"><a href="week-4-wednesday.html#cb54-4" aria-hidden="true" tabindex="-1"></a>    sp <span class="op">=</span> <span class="kw">new</span> Shape<span class="op">;</span></span>
+<span id="cb54-5"><a href="week-4-wednesday.html#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span></span>
+<span id="cb54-6"><a href="week-4-wednesday.html#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb54-7"><a href="week-4-wednesday.html#cb54-7" aria-hidden="true" tabindex="-1"></a>  sp <span class="op">=</span> <span class="kw">new</span> Rectangle<span class="op">;</span>  </span>
+<span id="cb54-8"><a href="week-4-wednesday.html#cb54-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb54-9"><a href="week-4-wednesday.html#cb54-9" aria-hidden="true" tabindex="-1"></a>sp<span class="op">-&gt;</span>draw<span class="op">();</span></span></code></pre></div>
+<p>How do we call the right draw?</p>
+<p>The C (naive-ish) way: include an integer code in Shape that specifies what type of shape it is. Then when you call <code>draw()</code>, the function checks the integer code of the object and calls the correct version of itself. This is bad because it requires complete recompilation of everything involving Shape every time you want to add a new class that implements Shape. There will need to be a new integer code and all function calls to <code>draw()</code> have to recognize it. This recompilation is costly and should be avoided.</p>
+<p>The c++ way: compiler sets up a table for Shape called a virtual table of <code>vtbl</code>. Has an entry for each virtual function of the <code>Shape</code> type. Tells the linker to put pointers to Shape’s draw and move functions in the table. Rectangle will also have a virtual table for every virtual function in the class (move, draw, diag). The one’s already declared in Shape will be in the same slots in Rectangle’s virtual table as in Shape’s. Diag will have a pointer to Rectangle’s function. Draw will point to <strong>Rectangle’s</strong> draw() function, and the move will point to <strong>Shape’s</strong> move function. Compiler knows draw() is in slot #1 (arbitrary) for every class. Compiler gives an extra pointer called the virtual pointer for any object with virtual methods, <code>vfptr</code> in VS. In the constructor for rectangle, make a pointer in the Shape “subset” object to Rectangle’s virtual table. So the machine code is</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb55-1"><a href="week-4-wednesday.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;call the function at&quot;</span></span>
+<span id="cb55-2"><a href="week-4-wednesday.html#cb55-2" aria-hidden="true" tabindex="-1"></a>sp<span class="op">-&gt;</span>vptr<span class="op">[</span><span class="dv">1</span><span class="op">];</span> <span class="co">// the function in the second slot of </span></span>
+<span id="cb55-3"><a href="week-4-wednesday.html#cb55-3" aria-hidden="true" tabindex="-1"></a>             <span class="co">//whatever virtual table you have</span></span></code></pre></div>
+<p>Note that this says nothing about specific derived types. This gives us the flexibility to introduce new derived types of Shape without recompiling our code.</p>
+</div>
+<div id="abstract-classes" class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> Abstract Classes</h2>
+<p>Our implementation of Shape’s draw function is kinda silly. Do we need it? Right now, yes because the compiler needs to guarantee that every Shape pointer object will lead to something drawable. But if I say that I’m not going to specify a draw function for Shape but that every derived class will have one, that may work. You want to set the pointer in the lookup table to <code>nullptr</code>.</p>
+<p>Here’s how you do it:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb56-1"><a href="week-4-wednesday.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Shape</span>
+<span id="cb56-2"><a href="week-4-wednesday.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb56-3"><a href="week-4-wednesday.html#cb56-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">virtual</span> <span class="dt">void</span> move<span class="op">(</span><span class="dt">double</span> xnew<span class="op">,</span> <span class="dt">double</span> ynew<span class="op">);</span></span>
+<span id="cb56-4"><a href="week-4-wednesday.html#cb56-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">virtual</span> <span class="dt">void</span> draw<span class="op">()</span> <span class="at">const</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="co">//no new keywords lol</span></span>
+<span id="cb56-5"><a href="week-4-wednesday.html#cb56-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// called a &quot;pure virtual function&quot;</span></span>
+<span id="cb56-6"><a href="week-4-wednesday.html#cb56-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span> <span class="va">m_x</span><span class="op">;</span></span>
+<span id="cb56-7"><a href="week-4-wednesday.html#cb56-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span> <span class="va">m_y</span><span class="op">;</span></span>
+<span id="cb56-8"><a href="week-4-wednesday.html#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Consequences: you can’t make objects of the Shape type. So none of these:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb57-1"><a href="week-4-wednesday.html#cb57-1" aria-hidden="true" tabindex="-1"></a>Shape<span class="op">*</span> sp <span class="op">=</span> <span class="kw">new</span> Shape<span class="op">;</span></span>
+<span id="cb57-2"><a href="week-4-wednesday.html#cb57-2" aria-hidden="true" tabindex="-1"></a>Shape s<span class="op">;</span></span></code></pre></div>
+<p>But pointers to Shape with other things in there are fine. Then Shape is called an <em>abstract base class</em>, sometimes called ABC.</p>
+<p>If you don’t declare a draw function in a subclass, you won’t be allowed to instantiate that class either.</p>
+</div>
+<div id="multiple-inheritance" class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> Multiple Inheritance?</h2>
+<div class="sourceCode" id="cb58"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb58-1"><a href="week-4-wednesday.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Shape</span>
+<span id="cb58-2"><a href="week-4-wednesday.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb58-3"><a href="week-4-wednesday.html#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">//...</span></span>
+<span id="cb58-4"><a href="week-4-wednesday.html#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb58-5"><a href="week-4-wednesday.html#cb58-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-6"><a href="week-4-wednesday.html#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Polygon<span class="op">:</span> <span class="kw">public</span> Shape</span>
+<span id="cb58-7"><a href="week-4-wednesday.html#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb58-8"><a href="week-4-wednesday.html#cb58-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">~</span>Polygon<span class="op">();</span></span>
+<span id="cb58-9"><a href="week-4-wednesday.html#cb58-9" aria-hidden="true" tabindex="-1"></a>    Node<span class="op">*</span> head<span class="op">;</span></span>
+<span id="cb58-10"><a href="week-4-wednesday.html#cb58-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Shape just had <code>int</code>s, so we didn’t need a destructor, but Polygon is a linked list so we need to clean it up.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb59-1"><a href="week-4-wednesday.html#cb59-1" aria-hidden="true" tabindex="-1"></a>Shape<span class="op">*</span> sp<span class="op">;</span></span>
+<span id="cb59-2"><a href="week-4-wednesday.html#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>someCondition<span class="op">)</span></span>
+<span id="cb59-3"><a href="week-4-wednesday.html#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb59-4"><a href="week-4-wednesday.html#cb59-4" aria-hidden="true" tabindex="-1"></a>    sp <span class="op">=</span> <span class="kw">new</span> Polygon<span class="op">;</span></span>
+<span id="cb59-5"><a href="week-4-wednesday.html#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb59-6"><a href="week-4-wednesday.html#cb59-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb59-7"><a href="week-4-wednesday.html#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb59-8"><a href="week-4-wednesday.html#cb59-8" aria-hidden="true" tabindex="-1"></a>    sp <span class="op">=</span> <span class="kw">new</span> OtherShape<span class="op">;</span></span>
+<span id="cb59-9"><a href="week-4-wednesday.html#cb59-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb59-10"><a href="week-4-wednesday.html#cb59-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-11"><a href="week-4-wednesday.html#cb59-11" aria-hidden="true" tabindex="-1"></a><span class="kw">delete</span> sp<span class="op">;</span> <span class="co">//which destructor to call?</span></span></code></pre></div>
+<p>You need your destructor to be virtual, but Shape doesn’t declare a destructor anywhere. And we can’t default to virtual for every class, because that’s slow. So we declare Shape’s destructor. So</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb60-1"><a href="week-4-wednesday.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Shape</span>
+<span id="cb60-2"><a href="week-4-wednesday.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb60-3"><a href="week-4-wednesday.html#cb60-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">//...</span></span>
+<span id="cb60-4"><a href="week-4-wednesday.html#cb60-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">virtual</span> <span class="op">~</span>Shape<span class="op">();</span></span>
+<span id="cb60-5"><a href="week-4-wednesday.html#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb60-6"><a href="week-4-wednesday.html#cb60-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-7"><a href="week-4-wednesday.html#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Polygon<span class="op">:</span> <span class="kw">public</span> Shape</span>
+<span id="cb60-8"><a href="week-4-wednesday.html#cb60-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb60-9"><a href="week-4-wednesday.html#cb60-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">virtual</span> <span class="op">~</span>Polygon<span class="op">();</span></span>
+<span id="cb60-10"><a href="week-4-wednesday.html#cb60-10" aria-hidden="true" tabindex="-1"></a>    Node<span class="op">*</span> head<span class="op">;</span></span>
+<span id="cb60-11"><a href="week-4-wednesday.html#cb60-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>But what if Shape is abstract, then there’s never a Shape object to destroy. But turns out you still need that Shape destructor. Recall the destructor cycle:</p>
+<ol style="list-style-type: decimal">
+<li>Execute the body of the constructor</li>
+<li>Destroy the data members</li>
+<li>Destroy the base part</li>
+</ol>
+<p>So deleting a Polygon will call Shape’s destructor. So we have to implement it. Even if all our subclasses don’t have destructors, the Shape destructor still gets called. So we give the somewhat lame definition:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb61-1"><a href="week-4-wednesday.html#cb61-1" aria-hidden="true" tabindex="-1"></a>Shape<span class="op">::~</span>Shape<span class="op">()</span></span>
+<span id="cb61-2"><a href="week-4-wednesday.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="op">{}</span></span></code></pre></div>
+<p>So just write destructors for anything that may be a base class. Avoids recompilation later.</p>
+<p>Now let’s review the constructor cycle. It’s the destructor in reverse!</p>
+<p>Construction:
+1. Construct the base part
+2. Construct the data members
+3. Execute the body of the constructor</p>
+<p>Destruction:
+1. Execute the body of the constructor
+2. Destroy the data members
+3. Destroy the base part</p>
+<p>Here’s our setup:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb62-1"><a href="week-4-wednesday.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Shape</span>
+<span id="cb62-2"><a href="week-4-wednesday.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb62-3"><a href="week-4-wednesday.html#cb62-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span><span class="op">:</span></span>
+<span id="cb62-4"><a href="week-4-wednesday.html#cb62-4" aria-hidden="true" tabindex="-1"></a>        Shape<span class="op">(</span><span class="dt">double</span> x<span class="op">,</span> <span class="dt">double</span> y<span class="op">);</span></span>
+<span id="cb62-5"><a href="week-4-wednesday.html#cb62-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">virtual</span> <span class="op">~</span>Shape<span class="op">();</span></span>
+<span id="cb62-6"><a href="week-4-wednesday.html#cb62-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span><span class="op">:</span></span>
+<span id="cb62-7"><a href="week-4-wednesday.html#cb62-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">double</span> <span class="va">m_x</span><span class="op">;</span></span>
+<span id="cb62-8"><a href="week-4-wednesday.html#cb62-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">double</span> <span class="va">m_y</span><span class="op">;</span></span>
+<span id="cb62-9"><a href="week-4-wednesday.html#cb62-9" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb62-10"><a href="week-4-wednesday.html#cb62-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-11"><a href="week-4-wednesday.html#cb62-11" aria-hidden="true" tabindex="-1"></a>Shape<span class="op">::</span>Shape<span class="op">(</span><span class="dt">double</span> x<span class="op">,</span> <span class="dt">double</span> y<span class="op">)</span></span>
+<span id="cb62-12"><a href="week-4-wednesday.html#cb62-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span> <span class="va">m_x</span><span class="op">(</span>x<span class="op">),</span> <span class="va">m_y</span><span class="op">(</span>y<span class="op">)</span></span>
+<span id="cb62-13"><a href="week-4-wednesday.html#cb62-13" aria-hidden="true" tabindex="-1"></a><span class="op">{}</span></span>
+<span id="cb62-14"><a href="week-4-wednesday.html#cb62-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-15"><a href="week-4-wednesday.html#cb62-15" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Circle <span class="op">:</span> <span class="kw">public</span> Shape</span>
+<span id="cb62-16"><a href="week-4-wednesday.html#cb62-16" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb62-17"><a href="week-4-wednesday.html#cb62-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span><span class="op">:</span></span>
+<span id="cb62-18"><a href="week-4-wednesday.html#cb62-18" aria-hidden="true" tabindex="-1"></a>        Circle<span class="op">(</span><span class="dt">double</span> r<span class="op">,</span> <span class="dt">double</span> x<span class="op">,</span> <span class="dt">double</span> y<span class="op">);</span></span>
+<span id="cb62-19"><a href="week-4-wednesday.html#cb62-19" aria-hidden="true" tabindex="-1"></a>        Circle<span class="op">(</span><span class="dt">double</span> r<span class="op">);</span></span>
+<span id="cb62-20"><a href="week-4-wednesday.html#cb62-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span><span class="op">:</span></span>
+<span id="cb62-21"><a href="week-4-wednesday.html#cb62-21" aria-hidden="true" tabindex="-1"></a>     <span class="dt">double</span> <span class="va">m_r</span><span class="op">;</span></span>
+<span id="cb62-22"><a href="week-4-wednesday.html#cb62-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>The following code doesn’t compile:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb63-1"><a href="week-4-wednesday.html#cb63-1" aria-hidden="true" tabindex="-1"></a>Circle<span class="op">::</span>Circle<span class="op">(</span><span class="dt">double</span> r<span class="op">,</span> <span class="dt">double</span> x<span class="op">,</span> <span class="dt">double</span> y<span class="op">)</span></span>
+<span id="cb63-2"><a href="week-4-wednesday.html#cb63-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span> <span class="va">m_x</span><span class="op">(</span>x<span class="op">),</span> <span class="va">m_y</span><span class="op">(</span>y<span class="op">),</span> <span class="va">m_r</span><span class="op">(</span>r<span class="op">)</span></span>
+<span id="cb63-3"><a href="week-4-wednesday.html#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="op">{}</span></span></code></pre></div>
+<p>Because we’re trying to access <code>m_x</code> and <code>m_y</code> which aren’t members that Circle can access, they’re private to Shape. So we should initialize those with Shape. (First step of construction is construct the base part).</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb64-1"><a href="week-4-wednesday.html#cb64-1" aria-hidden="true" tabindex="-1"></a>Circle<span class="op">::</span>Circle<span class="op">(</span><span class="dt">double</span> r<span class="op">,</span> <span class="dt">double</span> x<span class="op">,</span> <span class="dt">double</span> y<span class="op">)</span></span>
+<span id="cb64-2"><a href="week-4-wednesday.html#cb64-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span> Shape<span class="op">(</span>x<span class="op">,</span> y<span class="op">),</span> <span class="va">m_r</span><span class="op">(</span>r<span class="op">)</span></span>
+<span id="cb64-3"><a href="week-4-wednesday.html#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="op">{}</span></span></code></pre></div>
+<p>An additional piece of information is given to the Shape constructor that points to Circle’s virtual table. This is how it knows it’s a Circle.</p>
+<p>What if we have…</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb65-1"><a href="week-4-wednesday.html#cb65-1" aria-hidden="true" tabindex="-1"></a>Circle<span class="op">::</span>Circle<span class="op">(</span><span class="dt">double</span> r<span class="op">,</span> <span class="dt">double</span> x<span class="op">,</span> <span class="dt">double</span> y<span class="op">)</span></span>
+<span id="cb65-2"><a href="week-4-wednesday.html#cb65-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span> <span class="va">m_r</span><span class="op">(</span>r<span class="op">)</span></span>
+<span id="cb65-3"><a href="week-4-wednesday.html#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb65-4"><a href="week-4-wednesday.html#cb65-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>r<span class="op">&lt;=</span><span class="dv">0</span><span class="op">)</span></span>
+<span id="cb65-5"><a href="week-4-wednesday.html#cb65-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb65-6"><a href="week-4-wednesday.html#cb65-6" aria-hidden="true" tabindex="-1"></a>        <span class="co">//error handling</span></span>
+<span id="cb65-7"><a href="week-4-wednesday.html#cb65-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb65-8"><a href="week-4-wednesday.html#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Then the compiler looks for a default constructor for Shape, but since there is none this is a compilation error.</p>
+<p>And our other Circle constructor looks like:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb66-1"><a href="week-4-wednesday.html#cb66-1" aria-hidden="true" tabindex="-1"></a>Circle<span class="op">::</span>Circle<span class="op">(</span><span class="dt">double</span> r<span class="op">)</span></span>
+<span id="cb66-2"><a href="week-4-wednesday.html#cb66-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span> Shape<span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">),</span> <span class="va">m_r</span><span class="op">(</span>r<span class="op">)</span></span>
+<span id="cb66-3"><a href="week-4-wednesday.html#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb66-4"><a href="week-4-wednesday.html#cb66-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>r<span class="op">&lt;=</span><span class="dv">0</span><span class="op">)</span></span>
+<span id="cb66-5"><a href="week-4-wednesday.html#cb66-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb66-6"><a href="week-4-wednesday.html#cb66-6" aria-hidden="true" tabindex="-1"></a>        <span class="co">//error handling</span></span>
+<span id="cb66-7"><a href="week-4-wednesday.html#cb66-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb66-8"><a href="week-4-wednesday.html#cb66-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb66-9"><a href="week-4-wednesday.html#cb66-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-4-monday-lecture.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-5-monday-lecture.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["cs32_notes.pdf", "cs32_notes.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

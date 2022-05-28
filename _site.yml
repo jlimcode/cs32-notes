@@ -1,0 +1,10 @@
+name: "cs-32-notes"
+navbar:
+  title: "Jason's CS32 Notes"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Week 1"
+      href: week1.html
+    - text: "Week 2"
+      href: week2.html

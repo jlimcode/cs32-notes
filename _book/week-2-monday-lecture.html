@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Week 2 Monday Lecture | Computer Science 32: Data Structures</title>
+  <meta name="description" content="Computer Science notes" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Week 2 Monday Lecture | Computer Science 32: Data Structures" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Computer Science notes" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Week 2 Monday Lecture | Computer Science 32: Data Structures" />
+  
+  <meta name="twitter:description" content="Computer Science notes" />
+  
+
+<meta name="author" content="Jason Lim" />
+
+
+<meta name="date" content="2021-06-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-1-wednesday-lecture.html"/>
+<link rel="next" href="week-2-monday-qa.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">CS32 Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html"><i class="fa fa-check"></i><b>2</b> Week 1 Wednesday Pre-Lecture</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#why-we-dont-write-public-data-members"><i class="fa fa-check"></i><b>2.1</b> Why we don’t write public data members</a></li>
+<li class="chapter" data-level="2.2" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#const-member-functions"><i class="fa fa-check"></i><b>2.2</b> <code>const</code> Member Functions</a></li>
+<li class="chapter" data-level="2.3" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#alternate-constructor-stucture"><i class="fa fa-check"></i><b>2.3</b> Alternate Constructor Stucture</a></li>
+<li class="chapter" data-level="2.4" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#order-of-construction"><i class="fa fa-check"></i><b>2.4</b> Order of Construction</a></li>
+<li class="chapter" data-level="2.5" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#separate-compilation"><i class="fa fa-check"></i><b>2.5</b> Separate Compilation</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#header-file-include-practices"><i class="fa fa-check"></i><b>2.5.1</b> Header File Include Practices</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html"><i class="fa fa-check"></i><b>3</b> Week 1 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html#constants-pointers-and-constant-pointers"><i class="fa fa-check"></i><b>3.1</b> Constants, pointers, and constant pointers</a></li>
+<li class="chapter" data-level="3.2" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html#default-constructors"><i class="fa fa-check"></i><b>3.2</b> Default Constructors</a></li>
+<li class="chapter" data-level="3.3" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html#new-and-variable-lifecycle"><i class="fa fa-check"></i><b>3.3</b> <code>new</code> and Variable Lifecycle</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html"><i class="fa fa-check"></i><b>4</b> Week 2 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#separate-compilation-issues"><i class="fa fa-check"></i><b>4.1</b> Separate Compilation Issues</a></li>
+<li class="chapter" data-level="4.2" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#example-project"><i class="fa fa-check"></i><b>4.2</b> Example Project</a></li>
+<li class="chapter" data-level="4.3" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#include-guard-rules"><i class="fa fa-check"></i><b>4.3</b> Include Guard Rules</a></li>
+<li class="chapter" data-level="4.4" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#pointer-example"><i class="fa fa-check"></i><b>4.4</b> Pointer Example</a></li>
+<li class="chapter" data-level="4.5" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#incomplete-type-declaration"><i class="fa fa-check"></i><b>4.5</b> Incomplete Type Declaration</a></li>
+<li class="chapter" data-level="4.6" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#resource-management"><i class="fa fa-check"></i><b>4.6</b> Resource Management</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="week-2-monday-qa.html"><a href="week-2-monday-qa.html"><i class="fa fa-check"></i><b>5</b> Week 2 Monday Q&amp;A</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="week-2-monday-qa.html"><a href="week-2-monday-qa.html#destructor-cycle"><i class="fa fa-check"></i><b>5.1</b> Destructor Cycle</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html"><i class="fa fa-check"></i><b>6</b> Week 2 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html#copying"><i class="fa fa-check"></i><b>6.1</b> Copying</a></li>
+<li class="chapter" data-level="6.2" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html#assignment"><i class="fa fa-check"></i><b>6.2</b> Assignment</a></li>
+<li class="chapter" data-level="6.3" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html#aliasing"><i class="fa fa-check"></i><b>6.3</b> Aliasing</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="week-2-wednesday-qa.html"><a href="week-2-wednesday-qa.html"><i class="fa fa-check"></i><b>7</b> Week 2 Wednesday Q&amp;A</a></li>
+<li class="chapter" data-level="8" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html"><i class="fa fa-check"></i><b>8</b> Week 3 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#introduction-to-linked-lists"><i class="fa fa-check"></i><b>8.1</b> Introduction to Linked Lists</a></li>
+<li class="chapter" data-level="8.2" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#first-link-list-implementation"><i class="fa fa-check"></i><b>8.2</b> First Link List Implementation</a></li>
+<li class="chapter" data-level="8.3" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#linked-list-iteration"><i class="fa fa-check"></i><b>8.3</b> Linked List Iteration</a></li>
+<li class="chapter" data-level="8.4" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#finding-a-specific-value"><i class="fa fa-check"></i><b>8.4</b> Finding a Specific value</a></li>
+<li class="chapter" data-level="8.5" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#getting-rid-of-a-node"><i class="fa fa-check"></i><b>8.5</b> Getting Rid of a Node</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html"><i class="fa fa-check"></i><b>9</b> Week 3 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#stacks-in-c"><i class="fa fa-check"></i><b>9.1</b> Stacks in c++</a></li>
+<li class="chapter" data-level="9.2" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#queues-in-c"><i class="fa fa-check"></i><b>9.2</b> Queues in c++</a></li>
+<li class="chapter" data-level="9.3" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#motivating-example-for-stacks"><i class="fa fa-check"></i><b>9.3</b> Motivating Example for Stacks</a></li>
+<li class="chapter" data-level="9.4" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#implementing-stacks-with-arrayslists"><i class="fa fa-check"></i><b>9.4</b> Implementing Stacks with Arrays/Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html"><i class="fa fa-check"></i><b>10</b> Week 4 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#implementing-queue-with-an-array"><i class="fa fa-check"></i><b>10.1</b> Implementing Queue with an Array</a></li>
+<li class="chapter" data-level="10.2" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#polymorphism"><i class="fa fa-check"></i><b>10.2</b> Polymorphism</a></li>
+<li class="chapter" data-level="10.3" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#implementation-of-polymorphism"><i class="fa fa-check"></i><b>10.3</b> Implementation of Polymorphism</a></li>
+<li class="chapter" data-level="10.4" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#static-and-dynamic-binding"><i class="fa fa-check"></i><b>10.4</b> Static and Dynamic Binding</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html"><i class="fa fa-check"></i><b>11</b> Week 4 Wednesday</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html#dynamic-lookup"><i class="fa fa-check"></i><b>11.1</b> Dynamic Lookup</a></li>
+<li class="chapter" data-level="11.2" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html#abstract-classes"><i class="fa fa-check"></i><b>11.2</b> Abstract Classes</a></li>
+<li class="chapter" data-level="11.3" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html#multiple-inheritance"><i class="fa fa-check"></i><b>11.3</b> Multiple Inheritance?</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html"><i class="fa fa-check"></i><b>12</b> Week 5 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html#motivating-recursion"><i class="fa fa-check"></i><b>12.1</b> Motivating Recursion</a></li>
+<li class="chapter" data-level="12.2" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html#introduction-to-recursion"><i class="fa fa-check"></i><b>12.2</b> Introduction to Recursion</a></li>
+<li class="chapter" data-level="12.3" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html#implementing-the-merge-sort"><i class="fa fa-check"></i><b>12.3</b> Implementing the Merge Sort</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html"><i class="fa fa-check"></i><b>13</b> Week 5 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#pointers-and-arrays"><i class="fa fa-check"></i><b>13.1</b> Pointers and Arrays</a></li>
+<li class="chapter" data-level="13.2" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#infinite-recursion"><i class="fa fa-check"></i><b>13.2</b> Infinite Recursion</a></li>
+<li class="chapter" data-level="13.3" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#types-of-recursive-problems"><i class="fa fa-check"></i><b>13.3</b> Types of Recursive Problems</a></li>
+<li class="chapter" data-level="13.4" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#common-mistakes-in-recursion"><i class="fa fa-check"></i><b>13.4</b> Common Mistakes in Recursion</a></li>
+<li class="chapter" data-level="13.5" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#templates"><i class="fa fa-check"></i><b>13.5</b> Templates</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html"><i class="fa fa-check"></i><b>14</b> Week 6 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#more-issues-with-templates"><i class="fa fa-check"></i><b>14.1</b> More issues with Templates</a></li>
+<li class="chapter" data-level="14.2" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#template-classes"><i class="fa fa-check"></i><b>14.2</b> Template Classes</a></li>
+<li class="chapter" data-level="14.3" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#stl"><i class="fa fa-check"></i><b>14.3</b> STL</a></li>
+<li class="chapter" data-level="14.4" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#vector"><i class="fa fa-check"></i><b>14.4</b> Vector</a></li>
+<li class="chapter" data-level="14.5" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#linked-lists"><i class="fa fa-check"></i><b>14.5</b> Linked Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="week-6-wednesday-stl-and-algorithms.html"><a href="week-6-wednesday-stl-and-algorithms.html"><i class="fa fa-check"></i><b>15</b> Week 6 Wednesday: STL and Algorithms</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="week-6-wednesday-stl-and-algorithms.html"><a href="week-6-wednesday-stl-and-algorithms.html#standard-algorithms"><i class="fa fa-check"></i><b>15.1</b> Standard Algorithms</a></li>
+<li class="chapter" data-level="15.2" data-path="week-6-wednesday-stl-and-algorithms.html"><a href="week-6-wednesday-stl-and-algorithms.html#algorithm-analysis"><i class="fa fa-check"></i><b>15.2</b> Algorithm Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="week-7-monday-lecture.html"><a href="week-7-monday-lecture.html"><i class="fa fa-check"></i><b>16</b> Week 7 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="week-7-monday-lecture.html"><a href="week-7-monday-lecture.html#applications-of-algorithm-analysis-sorting"><i class="fa fa-check"></i><b>16.1</b> Applications of Algorithm Analysis: Sorting</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="week-7-wednesday-sorting-trees.html"><a href="week-7-wednesday-sorting-trees.html"><i class="fa fa-check"></i><b>17</b> Week 7 Wednesday: Sorting, Trees</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="week-7-wednesday-sorting-trees.html"><a href="week-7-wednesday-sorting-trees.html#improving-quicksort"><i class="fa fa-check"></i><b>17.1</b> Improving Quicksort</a></li>
+<li class="chapter" data-level="17.2" data-path="week-7-wednesday-sorting-trees.html"><a href="week-7-wednesday-sorting-trees.html#trees"><i class="fa fa-check"></i><b>17.2</b> Trees</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="week-8-monday-trees.html"><a href="week-8-monday-trees.html"><i class="fa fa-check"></i><b>18</b> Week 8 Monday: Trees</a></li>
+<li class="chapter" data-level="19" data-path="week-8-wednesday-hash-tables.html"><a href="week-8-wednesday-hash-tables.html"><i class="fa fa-check"></i><b>19</b> Week 8 Wednesday: Hash Tables</a></li>
+<li class="chapter" data-level="20" data-path="week-9-monday-lecture-more-hashtables.html"><a href="week-9-monday-lecture-more-hashtables.html"><i class="fa fa-check"></i><b>20</b> Week 9 Monday Lecture: More Hashtables</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="week-9-monday-lecture-more-hashtables.html"><a href="week-9-monday-lecture-more-hashtables.html#more-stl-data-structures"><i class="fa fa-check"></i><b>20.1</b> More STL Data Structures</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="week-9-wednesday-lecture-heaps.html"><a href="week-9-wednesday-lecture-heaps.html"><i class="fa fa-check"></i><b>21</b> Week 9 Wednesday Lecture: Heaps</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Computer Science 32: Data Structures</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week-2-monday-lecture" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Week 2 Monday Lecture</h1>
+<div id="separate-compilation-issues" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Separate Compilation Issues</h2>
+<p>For each source file (.cpp) in a project, compiler produces object file (.o or .obj) containing:
+- the machine language translation of the code
+- storage for global objects (like <code>std::cout</code>)
+- a list of global names defined (aka implemented) by this object file
+- a list of global names used in this file that need a definition somewhere</p>
+<p>Then, the linker brings all the objects together with object files from libraries to make an executable file. The linker needs these rules to be upheld:
+- Nothing can be defined more than once
+- Every need must be satisfied by some definition
+- There must be exactly one main routine</p>
+<p>Simple rule for usage:
+&gt; If you want to use a class type, include the appropriate header</p>
+</div>
+<div id="example-project" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Example Project</h2>
+<p>Point.h</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="week-2-monday-lecture.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// some include guards:</span></span>
+<span id="cb6-2"><a href="week-2-monday-lecture.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">// (still the only portable way to protect)</span></span>
+<span id="cb6-3"><a href="week-2-monday-lecture.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#ifdef POINT_INCLUDED</span></span>
+<span id="cb6-4"><a href="week-2-monday-lecture.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="pp">#define POINT_INCLUDED</span></span>
+<span id="cb6-5"><a href="week-2-monday-lecture.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">// so it will only define once, as desired</span></span>
+<span id="cb6-6"><a href="week-2-monday-lecture.html#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="week-2-monday-lecture.html#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Point <span class="op">{</span></span>
+<span id="cb6-8"><a href="week-2-monday-lecture.html#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">//...</span></span>
+<span id="cb6-9"><a href="week-2-monday-lecture.html#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb6-10"><a href="week-2-monday-lecture.html#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="week-2-monday-lecture.html#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="pp">#endif </span><span class="co">// POINT_INCLUDED</span></span></code></pre></div>
+<p>Circle.h</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="week-2-monday-lecture.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&quot;Point.h&quot;</span></span>
+<span id="cb7-2"><a href="week-2-monday-lecture.html#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="week-2-monday-lecture.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Circle <span class="op">{</span></span>
+<span id="cb7-4"><a href="week-2-monday-lecture.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">//...</span></span>
+<span id="cb7-5"><a href="week-2-monday-lecture.html#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span><span class="op">:</span></span>
+<span id="cb7-6"><a href="week-2-monday-lecture.html#cb7-6" aria-hidden="true" tabindex="-1"></a>    Point <span class="va">m_center</span><span class="op">;</span></span>
+<span id="cb7-7"><a href="week-2-monday-lecture.html#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span> <span class="va">m_radius</span><span class="op">;</span></span>
+<span id="cb7-8"><a href="week-2-monday-lecture.html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
+<p>main.cpp</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="week-2-monday-lecture.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&quot;Circle.h&quot;</span></span>
+<span id="cb8-2"><a href="week-2-monday-lecture.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">// shouldn&#39;t have to include &quot;Point.h&quot; if not being used directly, but also should require it if it is being used.</span></span>
+<span id="cb8-3"><a href="week-2-monday-lecture.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">// you shouldn&#39;t have to know if Circle is implemented with Point or not</span></span>
+<span id="cb8-4"><a href="week-2-monday-lecture.html#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="week-2-monday-lecture.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">//if I #include &quot;Point.h&quot; at this point, now we&#39;ll get a complication error because Point will get declared twice (not with the include guards I included)</span></span>
+<span id="cb8-6"><a href="week-2-monday-lecture.html#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="week-2-monday-lecture.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb8-8"><a href="week-2-monday-lecture.html#cb8-8" aria-hidden="true" tabindex="-1"></a>  Circle c<span class="op">(-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">10</span><span class="op">);</span></span>
+<span id="cb8-9"><a href="week-2-monday-lecture.html#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb8-10"><a href="week-2-monday-lecture.html#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</div>
+<div id="include-guard-rules" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Include Guard Rules</h2>
+<ul>
+<li>Make the symbol you’re defining to be unique
+<ul>
+<li>Unique names typically include filename</li>
+</ul></li>
+<li>Don’t write anything significant outside the <code>#ifndef</code> block</li>
+</ul>
+</div>
+<div id="pointer-example" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Pointer Example</h2>
+<p>This works with the <a href="week-2-monday-lecture.html#incomplete-type-declaration">Incomplete Type Declaration</a> section and offers an illustrative example.</p>
+<p>Student.h</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb9-1"><a href="week-2-monday-lecture.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#ifndef STUDENT_INCLUDED</span></span>
+<span id="cb9-2"><a href="week-2-monday-lecture.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#define STUDENT_INCLUDED</span></span>
+<span id="cb9-3"><a href="week-2-monday-lecture.html#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="week-2-monday-lecture.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">//can&#39;t include Course here and Student in Course.h because that&#39;s a circular dependency</span></span>
+<span id="cb9-5"><a href="week-2-monday-lecture.html#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="week-2-monday-lecture.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">// compilers need to know how big the object will be</span></span>
+<span id="cb9-7"><a href="week-2-monday-lecture.html#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">// this will be 10 times as big as a Course pointer</span></span>
+<span id="cb9-8"><a href="week-2-monday-lecture.html#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">// but C++ already knows how big any pointer is (they&#39;re all 4 bytes)</span></span>
+<span id="cb9-9"><a href="week-2-monday-lecture.html#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">// now you can just use an incomplete declaration to break circular dependency and speed up compilation </span></span>
+<span id="cb9-10"><a href="week-2-monday-lecture.html#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="week-2-monday-lecture.html#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Course<span class="op">;</span></span>
+<span id="cb9-12"><a href="week-2-monday-lecture.html#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="week-2-monday-lecture.html#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student</span>
+<span id="cb9-14"><a href="week-2-monday-lecture.html#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb9-15"><a href="week-2-monday-lecture.html#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span><span class="op">:</span></span>
+<span id="cb9-16"><a href="week-2-monday-lecture.html#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> enroll<span class="op">(</span>Course<span class="op">*</span> cp<span class="op">);</span></span>
+<span id="cb9-17"><a href="week-2-monday-lecture.html#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span><span class="op">:</span></span>
+<span id="cb9-18"><a href="week-2-monday-lecture.html#cb9-18" aria-hidden="true" tabindex="-1"></a>    Course<span class="op">*</span> <span class="va">m_studyList</span><span class="op">[</span><span class="dv">10</span><span class="op">];</span></span>
+<span id="cb9-19"><a href="week-2-monday-lecture.html#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb9-20"><a href="week-2-monday-lecture.html#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="pp">#endif </span><span class="co">// !STUDENT_INCLUDED</span></span></code></pre></div>
+<p>Course.h</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb10-1"><a href="week-2-monday-lecture.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#ifndef COURSE_INCLUDED</span></span>
+<span id="cb10-2"><a href="week-2-monday-lecture.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#define COURSE_INCLUDED</span></span>
+<span id="cb10-3"><a href="week-2-monday-lecture.html#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="week-2-monday-lecture.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student<span class="op">;</span> <span class="co">// breaking circular dependency</span></span>
+<span id="cb10-5"><a href="week-2-monday-lecture.html#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="week-2-monday-lecture.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Course</span>
+<span id="cb10-7"><a href="week-2-monday-lecture.html#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb10-8"><a href="week-2-monday-lecture.html#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span><span class="op">:</span></span>
+<span id="cb10-9"><a href="week-2-monday-lecture.html#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> units<span class="op">()</span> <span class="at">const</span><span class="op">;</span></span>
+<span id="cb10-10"><a href="week-2-monday-lecture.html#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span><span class="op">:</span></span>
+<span id="cb10-11"><a href="week-2-monday-lecture.html#cb10-11" aria-hidden="true" tabindex="-1"></a>  Student<span class="op">*</span> <span class="va">m_roster</span><span class="op">[</span><span class="dv">1000</span><span class="op">];</span></span>
+<span id="cb10-12"><a href="week-2-monday-lecture.html#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb10-13"><a href="week-2-monday-lecture.html#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="pp">#endif </span><span class="co">// !COURSE_INCLUDED</span></span></code></pre></div>
+<p>main.cpp</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb11-1"><a href="week-2-monday-lecture.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&quot;Student.h&quot;</span></span>
+<span id="cb11-2"><a href="week-2-monday-lecture.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&quot;Course.h&quot;</span></span>
+<span id="cb11-3"><a href="week-2-monday-lecture.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="week-2-monday-lecture.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> f<span class="op">(</span>Student<span class="op">*</span> s<span class="op">,</span> Course<span class="op">*</span> cp<span class="op">)</span></span>
+<span id="cb11-5"><a href="week-2-monday-lecture.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb11-6"><a href="week-2-monday-lecture.html#cb11-6" aria-hidden="true" tabindex="-1"></a>  s<span class="op">-&gt;</span>enroll<span class="op">(</span>cp<span class="op">);</span></span>
+<span id="cb11-7"><a href="week-2-monday-lecture.html#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</div>
+<div id="incomplete-type-declaration" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Incomplete Type Declaration</h2>
+<p>C++ allows for declarations of a class that don’t give any other information. You can do this as many times as you like and still give a full declaration later.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb12-1"><a href="week-2-monday-lecture.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A<span class="op">;</span></span>
+<span id="cb12-2"><a href="week-2-monday-lecture.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">// ...</span></span>
+<span id="cb12-3"><a href="week-2-monday-lecture.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A<span class="op">;</span></span>
+<span id="cb12-4"><a href="week-2-monday-lecture.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">// ...</span></span>
+<span id="cb12-5"><a href="week-2-monday-lecture.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A </span>
+<span id="cb12-6"><a href="week-2-monday-lecture.html#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb12-7"><a href="week-2-monday-lecture.html#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">//...</span></span>
+<span id="cb12-8"><a href="week-2-monday-lecture.html#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb12-9"><a href="week-2-monday-lecture.html#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">// ...</span></span>
+<span id="cb12-10"><a href="week-2-monday-lecture.html#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A<span class="op">;</span></span></code></pre></div>
+<p>You can even keep giving incomplete declarations after the complete one!</p>
+<p>You can use an incomplete declaration anytime you’re just using a reference or pointer to the class type (C++ already knows the size). But if you have a data member of that type, you need to have the full declaration to see the full size.</p>
+<p>In general:
+&gt; If the file Foo.h defines the class Foo, when does another file require you to say
+&gt; <code>cpp &gt; #include "Foo.h" &gt;</code>
+&gt; and when can you instead simply provide the incomplete type declaration
+&gt; <code>cpp &gt; class Foo; &gt;</code>
+&gt;
+&gt; You have to <code>#include</code> the header file defining a class when
+&gt; * you declare a data member of that class type
+&gt; * you declare a container (e.g. an array or a vector) of objects of that class type
+&gt; * you create an object of that class type
+&gt; * you use a member of that class type</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb13-1"><a href="week-2-monday-lecture.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Blah</span>
+<span id="cb13-2"><a href="week-2-monday-lecture.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb13-3"><a href="week-2-monday-lecture.html#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">//...</span></span>
+<span id="cb13-4"><a href="week-2-monday-lecture.html#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> g<span class="op">(</span>Foo f<span class="op">,</span> Foo<span class="op">&amp;</span> fr<span class="op">,</span> Foo<span class="op">*</span> fp<span class="op">);</span>  <span class="co">// just need to say   class Foo;</span></span>
+<span id="cb13-5"><a href="week-2-monday-lecture.html#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">//...</span></span>
+<span id="cb13-6"><a href="week-2-monday-lecture.html#cb13-6" aria-hidden="true" tabindex="-1"></a>    Foo<span class="op">*</span> <span class="va">m_fp</span><span class="op">;</span>           <span class="co">// just need to say   class Foo;</span></span>
+<span id="cb13-7"><a href="week-2-monday-lecture.html#cb13-7" aria-hidden="true" tabindex="-1"></a>    Foo<span class="op">*</span> <span class="va">m_fpa</span><span class="op">[</span><span class="dv">10</span><span class="op">];</span>      <span class="co">// just need to say   class Foo;</span></span>
+<span id="cb13-8"><a href="week-2-monday-lecture.html#cb13-8" aria-hidden="true" tabindex="-1"></a>    vector<span class="op">&lt;</span>Foo<span class="op">*&gt;</span> <span class="va">m_fpv</span><span class="op">;</span>  <span class="co">// just need to say   class Foo;</span></span>
+<span id="cb13-9"><a href="week-2-monday-lecture.html#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="week-2-monday-lecture.html#cb13-10" aria-hidden="true" tabindex="-1"></a>    Foo <span class="va">m_f</span><span class="op">;</span>             <span class="co">// must #include Foo.h</span></span>
+<span id="cb13-11"><a href="week-2-monday-lecture.html#cb13-11" aria-hidden="true" tabindex="-1"></a>    Foo <span class="va">m_fa</span><span class="op">[</span><span class="dv">10</span><span class="op">];</span>        <span class="co">// must #include Foo.h</span></span>
+<span id="cb13-12"><a href="week-2-monday-lecture.html#cb13-12" aria-hidden="true" tabindex="-1"></a>    vector<span class="op">&lt;</span>Foo<span class="op">&gt;</span> <span class="va">m_fv</span><span class="op">;</span>    <span class="co">// must #include Foo.h</span></span>
+<span id="cb13-13"><a href="week-2-monday-lecture.html#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb13-14"><a href="week-2-monday-lecture.html#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="week-2-monday-lecture.html#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> Blah<span class="op">::</span>g<span class="op">(</span>Foo f<span class="op">,</span> Foo<span class="op">&amp;</span> fr<span class="op">,</span> Foo<span class="op">*</span> fp<span class="op">)</span></span>
+<span id="cb13-16"><a href="week-2-monday-lecture.html#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb13-17"><a href="week-2-monday-lecture.html#cb13-17" aria-hidden="true" tabindex="-1"></a>    Foo f2<span class="op">(</span><span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">);</span>      <span class="co">// must #include Foo.h</span></span>
+<span id="cb13-18"><a href="week-2-monday-lecture.html#cb13-18" aria-hidden="true" tabindex="-1"></a>    f<span class="op">.</span>gleep<span class="op">();</span>           <span class="co">// must #include Foo.h</span></span>
+<span id="cb13-19"><a href="week-2-monday-lecture.html#cb13-19" aria-hidden="true" tabindex="-1"></a>    fr<span class="op">.</span>gleep<span class="op">();</span>          <span class="co">// must #include Foo.h</span></span>
+<span id="cb13-20"><a href="week-2-monday-lecture.html#cb13-20" aria-hidden="true" tabindex="-1"></a>    fp<span class="op">-&gt;</span>gleep<span class="op">();</span>         <span class="co">// must #include Foo.h</span></span>
+<span id="cb13-21"><a href="week-2-monday-lecture.html#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><strong>As a result of these rules, you can’t have a class B with a data member of class A when class A has a data member of class B.</strong> There is infinite recursion here that you should avoid anyway (when the compiler goes to calculate object size it will get an infinite size).</p>
+</div>
+<div id="resource-management" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Resource Management</h2>
+<p>We don’t manage infinite resources, so we’ll focus on computer resources that are limited. We’re going to focus on memory for this class.</p>
+<p>Let’s imagine that we’re back in time. When c++ had no standard library. Let’s try to write a standard String implementation.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb14-1"><a href="week-2-monday-lecture.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> h<span class="op">()</span></span>
+<span id="cb14-2"><a href="week-2-monday-lecture.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb14-3"><a href="week-2-monday-lecture.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  String s<span class="op">(</span><span class="st">&quot;Hello&quot;</span><span class="op">);</span></span>
+<span id="cb14-4"><a href="week-2-monday-lecture.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  String t<span class="op">;</span></span>
+<span id="cb14-5"><a href="week-2-monday-lecture.html#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="week-2-monday-lecture.html#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">char</span><span class="op">*</span> p<span class="op">;</span></span>
+<span id="cb14-7"><a href="week-2-monday-lecture.html#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">// ... set p somehow</span></span>
+<span id="cb14-8"><a href="week-2-monday-lecture.html#cb14-8" aria-hidden="true" tabindex="-1"></a>  String u<span class="op">(</span>p<span class="op">);</span></span>
+<span id="cb14-9"><a href="week-2-monday-lecture.html#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb14-10"><a href="week-2-monday-lecture.html#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="week-2-monday-lecture.html#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> String </span>
+<span id="cb14-12"><a href="week-2-monday-lecture.html#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb14-13"><a href="week-2-monday-lecture.html#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span><span class="op">:</span></span>
+<span id="cb14-14"><a href="week-2-monday-lecture.html#cb14-14" aria-hidden="true" tabindex="-1"></a>    String<span class="op">(</span><span class="at">const</span> <span class="dt">char</span><span class="op">*</span> value<span class="op">);</span> <span class="co">//remember that any string literal is actually a cstring, and that any array is passed as a pointer to the first item</span></span>
+<span id="cb14-15"><a href="week-2-monday-lecture.html#cb14-15" aria-hidden="true" tabindex="-1"></a>    String<span class="op">();</span></span>
+<span id="cb14-16"><a href="week-2-monday-lecture.html#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">private</span><span class="op">:</span></span>
+<span id="cb14-17"><a href="week-2-monday-lecture.html#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Class invariant:</span></span>
+<span id="cb14-18"><a href="week-2-monday-lecture.html#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">// m_text is a pointer to dynamically allocated array of m_len+1 characters</span></span>
+<span id="cb14-19"><a href="week-2-monday-lecture.html#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">// m_len &gt;= 0</span></span>
+<span id="cb14-20"><a href="week-2-monday-lecture.html#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">// m_len == strlen(m_text)</span></span>
+<span id="cb14-21"><a href="week-2-monday-lecture.html#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">char</span><span class="op">*</span> <span class="va">m_text</span><span class="op">;</span> <span class="co">//dynamically allocate so we don&#39;t default to too much or too little memory</span></span>
+<span id="cb14-22"><a href="week-2-monday-lecture.html#cb14-22" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> <span class="va">m_len</span><span class="op">;</span></span>
+<span id="cb14-23"><a href="week-2-monday-lecture.html#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb14-24"><a href="week-2-monday-lecture.html#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="week-2-monday-lecture.html#cb14-25" aria-hidden="true" tabindex="-1"></a>String<span class="op">::</span>String<span class="op">(</span><span class="at">const</span> <span class="dt">char</span><span class="op">*</span> value<span class="op">)</span></span>
+<span id="cb14-26"><a href="week-2-monday-lecture.html#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb14-27"><a href="week-2-monday-lecture.html#cb14-27" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_len</span> <span class="op">=</span> strlen<span class="op">(</span>value<span class="op">);</span></span>
+<span id="cb14-28"><a href="week-2-monday-lecture.html#cb14-28" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_text</span> <span class="op">=</span> <span class="kw">new</span> <span class="dt">char</span><span class="op">[</span><span class="va">m_len</span><span class="op">+</span><span class="dv">1</span><span class="op">];</span></span>
+<span id="cb14-29"><a href="week-2-monday-lecture.html#cb14-29" aria-hidden="true" tabindex="-1"></a>  strcpy<span class="op">(</span><span class="va">m_text</span><span class="op">,</span> value<span class="op">);</span></span>
+<span id="cb14-30"><a href="week-2-monday-lecture.html#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb14-31"><a href="week-2-monday-lecture.html#cb14-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-32"><a href="week-2-monday-lecture.html#cb14-32" aria-hidden="true" tabindex="-1"></a>String<span class="op">::</span>String<span class="op">()</span></span>
+<span id="cb14-33"><a href="week-2-monday-lecture.html#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb14-34"><a href="week-2-monday-lecture.html#cb14-34" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_len</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb14-35"><a href="week-2-monday-lecture.html#cb14-35" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_text</span> <span class="op">=</span> <span class="kw">new</span> <span class="dt">char</span><span class="op">[</span><span class="dv">1</span><span class="op">];</span></span>
+<span id="cb14-36"><a href="week-2-monday-lecture.html#cb14-36" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_text</span><span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="ch">&#39;</span><span class="sc">\0</span><span class="ch">&#39;</span><span class="op">;</span></span>
+<span id="cb14-37"><a href="week-2-monday-lecture.html#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Could you massage these into one constructor?</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb15-1"><a href="week-2-monday-lecture.html#cb15-1" aria-hidden="true" tabindex="-1"></a>String<span class="op">::</span>String<span class="op">(</span><span class="at">const</span> <span class="dt">char</span><span class="op">*</span> value <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">)</span></span>
+<span id="cb15-2"><a href="week-2-monday-lecture.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb15-3"><a href="week-2-monday-lecture.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_len</span> <span class="op">=</span> strlen<span class="op">(</span>value<span class="op">);</span></span>
+<span id="cb15-4"><a href="week-2-monday-lecture.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_text</span> <span class="op">=</span> <span class="kw">new</span> <span class="dt">char</span><span class="op">[</span><span class="va">m_len</span><span class="op">+</span><span class="dv">1</span><span class="op">];</span></span>
+<span id="cb15-5"><a href="week-2-monday-lecture.html#cb15-5" aria-hidden="true" tabindex="-1"></a>  strcpy<span class="op">(</span><span class="va">m_text</span><span class="op">,</span> value<span class="op">);</span></span>
+<span id="cb15-6"><a href="week-2-monday-lecture.html#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb15-7"><a href="week-2-monday-lecture.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">// now you don&#39;t need separate default</span></span></code></pre></div>
+<p>We decide for empty string, should we just point to array of just null bit, or do we have the <code>nullptr</code>? There are time costs and memory costs for initializing null bits, but it’s easier to implement. The needs of your users outweigh saving you time as a developer. So the right decision is <code>nullptr</code>.</p>
+<p>Costly to calculate length, so perhaps we store an integer of length as a data member.</p>
+<p>Dealing with potential <code>nullptr</code>:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="week-2-monday-lecture.html#cb16-1" aria-hidden="true" tabindex="-1"></a>String<span class="op">::</span>String<span class="op">(</span><span class="at">const</span> <span class="dt">char</span><span class="op">*</span> value <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">)</span></span>
+<span id="cb16-2"><a href="week-2-monday-lecture.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb16-3"><a href="week-2-monday-lecture.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span>value <span class="op">==</span> <span class="kw">nullptr</span><span class="op">)</span></span>
+<span id="cb16-4"><a href="week-2-monday-lecture.html#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb16-5"><a href="week-2-monday-lecture.html#cb16-5" aria-hidden="true" tabindex="-1"></a>    value <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb16-6"><a href="week-2-monday-lecture.html#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb16-7"><a href="week-2-monday-lecture.html#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_len</span> <span class="op">=</span> strlen<span class="op">(</span>value<span class="op">);</span></span>
+<span id="cb16-8"><a href="week-2-monday-lecture.html#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_text</span> <span class="op">=</span> <span class="kw">new</span> <span class="dt">char</span><span class="op">[</span><span class="va">m_len</span><span class="op">+</span><span class="dv">1</span><span class="op">];</span></span>
+<span id="cb16-9"><a href="week-2-monday-lecture.html#cb16-9" aria-hidden="true" tabindex="-1"></a>  strcpy<span class="op">(</span><span class="va">m_text</span><span class="op">,</span> value<span class="op">);</span></span>
+<span id="cb16-10"><a href="week-2-monday-lecture.html#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>And we need a destructor, because the default constructor generated for built-in types does essentially nothing. We need to get rid of everything we dynamically allocated.</p>
+<p>When you dynamically allocate a single object, you can just delete it. If you dynamically allocate an array of class objects, you use the array delete: <code>delete[]</code>. Must pass the pointer to element 0 with this command.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="week-2-monday-lecture.html#cb17-1" aria-hidden="true" tabindex="-1"></a>String<span class="op">::~</span>String<span class="op">()</span></span>
+<span id="cb17-2"><a href="week-2-monday-lecture.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb17-3"><a href="week-2-monday-lecture.html#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">delete</span><span class="op">[]</span> <span class="va">m_text</span><span class="op">;</span></span>
+<span id="cb17-4"><a href="week-2-monday-lecture.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>When you have a local variable, the destructor is called automatically when you exit the bracket. If you have:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb18-1"><a href="week-2-monday-lecture.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Employee</span>
+<span id="cb18-2"><a href="week-2-monday-lecture.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb18-3"><a href="week-2-monday-lecture.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  String name<span class="op">;</span></span>
+<span id="cb18-4"><a href="week-2-monday-lecture.html#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">double</span> salary<span class="op">;</span></span>
+<span id="cb18-5"><a href="week-2-monday-lecture.html#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> age<span class="op">;</span></span>
+<span id="cb18-6"><a href="week-2-monday-lecture.html#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb18-7"><a href="week-2-monday-lecture.html#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="week-2-monday-lecture.html#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> f<span class="op">(</span><span class="dt">int</span> age<span class="op">)</span> </span>
+<span id="cb18-9"><a href="week-2-monday-lecture.html#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb18-10"><a href="week-2-monday-lecture.html#cb18-10" aria-hidden="true" tabindex="-1"></a>  Employee e<span class="op">;</span></span>
+<span id="cb18-11"><a href="week-2-monday-lecture.html#cb18-11" aria-hidden="true" tabindex="-1"></a>  e<span class="op">.</span>salary <span class="op">=</span> <span class="fl">12345.6</span><span class="op">;</span></span>
+<span id="cb18-12"><a href="week-2-monday-lecture.html#cb18-12" aria-hidden="true" tabindex="-1"></a>  e<span class="op">.</span>age <span class="op">=</span> age<span class="op">;</span></span>
+<span id="cb18-13"><a href="week-2-monday-lecture.html#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>The new Employee object we made gets cleaned nicely at the bottom because after the empty default destructor runs, each data member will get destructed by it’s own specified or built-in destructor.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-1-wednesday-lecture.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-2-monday-qa.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["cs32_notes.pdf", "cs32_notes.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

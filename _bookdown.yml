@@ -1,0 +1,3 @@
+book_filename: "cs32_notes"
+rmd_files: ["index.md", "week1.md", "week2.md", "week3.md", "week4.md", "week5.md", "week6.md", "week7.md", "week8.md", "week9.md"]
+delete_merged_file: true

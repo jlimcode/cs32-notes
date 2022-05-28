@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Week 2 Wednesday Lecture | Computer Science 32: Data Structures</title>
+  <meta name="description" content="Computer Science notes" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Week 2 Wednesday Lecture | Computer Science 32: Data Structures" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Computer Science notes" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Week 2 Wednesday Lecture | Computer Science 32: Data Structures" />
+  
+  <meta name="twitter:description" content="Computer Science notes" />
+  
+
+<meta name="author" content="Jason Lim" />
+
+
+<meta name="date" content="2021-06-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-2-monday-qa.html"/>
+<link rel="next" href="week-2-wednesday-qa.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">CS32 Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html"><i class="fa fa-check"></i><b>2</b> Week 1 Wednesday Pre-Lecture</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#why-we-dont-write-public-data-members"><i class="fa fa-check"></i><b>2.1</b> Why we don’t write public data members</a></li>
+<li class="chapter" data-level="2.2" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#const-member-functions"><i class="fa fa-check"></i><b>2.2</b> <code>const</code> Member Functions</a></li>
+<li class="chapter" data-level="2.3" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#alternate-constructor-stucture"><i class="fa fa-check"></i><b>2.3</b> Alternate Constructor Stucture</a></li>
+<li class="chapter" data-level="2.4" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#order-of-construction"><i class="fa fa-check"></i><b>2.4</b> Order of Construction</a></li>
+<li class="chapter" data-level="2.5" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#separate-compilation"><i class="fa fa-check"></i><b>2.5</b> Separate Compilation</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#header-file-include-practices"><i class="fa fa-check"></i><b>2.5.1</b> Header File Include Practices</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html"><i class="fa fa-check"></i><b>3</b> Week 1 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html#constants-pointers-and-constant-pointers"><i class="fa fa-check"></i><b>3.1</b> Constants, pointers, and constant pointers</a></li>
+<li class="chapter" data-level="3.2" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html#default-constructors"><i class="fa fa-check"></i><b>3.2</b> Default Constructors</a></li>
+<li class="chapter" data-level="3.3" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html#new-and-variable-lifecycle"><i class="fa fa-check"></i><b>3.3</b> <code>new</code> and Variable Lifecycle</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html"><i class="fa fa-check"></i><b>4</b> Week 2 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#separate-compilation-issues"><i class="fa fa-check"></i><b>4.1</b> Separate Compilation Issues</a></li>
+<li class="chapter" data-level="4.2" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#example-project"><i class="fa fa-check"></i><b>4.2</b> Example Project</a></li>
+<li class="chapter" data-level="4.3" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#include-guard-rules"><i class="fa fa-check"></i><b>4.3</b> Include Guard Rules</a></li>
+<li class="chapter" data-level="4.4" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#pointer-example"><i class="fa fa-check"></i><b>4.4</b> Pointer Example</a></li>
+<li class="chapter" data-level="4.5" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#incomplete-type-declaration"><i class="fa fa-check"></i><b>4.5</b> Incomplete Type Declaration</a></li>
+<li class="chapter" data-level="4.6" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#resource-management"><i class="fa fa-check"></i><b>4.6</b> Resource Management</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="week-2-monday-qa.html"><a href="week-2-monday-qa.html"><i class="fa fa-check"></i><b>5</b> Week 2 Monday Q&amp;A</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="week-2-monday-qa.html"><a href="week-2-monday-qa.html#destructor-cycle"><i class="fa fa-check"></i><b>5.1</b> Destructor Cycle</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html"><i class="fa fa-check"></i><b>6</b> Week 2 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html#copying"><i class="fa fa-check"></i><b>6.1</b> Copying</a></li>
+<li class="chapter" data-level="6.2" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html#assignment"><i class="fa fa-check"></i><b>6.2</b> Assignment</a></li>
+<li class="chapter" data-level="6.3" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html#aliasing"><i class="fa fa-check"></i><b>6.3</b> Aliasing</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="week-2-wednesday-qa.html"><a href="week-2-wednesday-qa.html"><i class="fa fa-check"></i><b>7</b> Week 2 Wednesday Q&amp;A</a></li>
+<li class="chapter" data-level="8" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html"><i class="fa fa-check"></i><b>8</b> Week 3 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#introduction-to-linked-lists"><i class="fa fa-check"></i><b>8.1</b> Introduction to Linked Lists</a></li>
+<li class="chapter" data-level="8.2" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#first-link-list-implementation"><i class="fa fa-check"></i><b>8.2</b> First Link List Implementation</a></li>
+<li class="chapter" data-level="8.3" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#linked-list-iteration"><i class="fa fa-check"></i><b>8.3</b> Linked List Iteration</a></li>
+<li class="chapter" data-level="8.4" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#finding-a-specific-value"><i class="fa fa-check"></i><b>8.4</b> Finding a Specific value</a></li>
+<li class="chapter" data-level="8.5" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#getting-rid-of-a-node"><i class="fa fa-check"></i><b>8.5</b> Getting Rid of a Node</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html"><i class="fa fa-check"></i><b>9</b> Week 3 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#stacks-in-c"><i class="fa fa-check"></i><b>9.1</b> Stacks in c++</a></li>
+<li class="chapter" data-level="9.2" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#queues-in-c"><i class="fa fa-check"></i><b>9.2</b> Queues in c++</a></li>
+<li class="chapter" data-level="9.3" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#motivating-example-for-stacks"><i class="fa fa-check"></i><b>9.3</b> Motivating Example for Stacks</a></li>
+<li class="chapter" data-level="9.4" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#implementing-stacks-with-arrayslists"><i class="fa fa-check"></i><b>9.4</b> Implementing Stacks with Arrays/Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html"><i class="fa fa-check"></i><b>10</b> Week 4 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#implementing-queue-with-an-array"><i class="fa fa-check"></i><b>10.1</b> Implementing Queue with an Array</a></li>
+<li class="chapter" data-level="10.2" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#polymorphism"><i class="fa fa-check"></i><b>10.2</b> Polymorphism</a></li>
+<li class="chapter" data-level="10.3" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#implementation-of-polymorphism"><i class="fa fa-check"></i><b>10.3</b> Implementation of Polymorphism</a></li>
+<li class="chapter" data-level="10.4" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#static-and-dynamic-binding"><i class="fa fa-check"></i><b>10.4</b> Static and Dynamic Binding</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html"><i class="fa fa-check"></i><b>11</b> Week 4 Wednesday</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html#dynamic-lookup"><i class="fa fa-check"></i><b>11.1</b> Dynamic Lookup</a></li>
+<li class="chapter" data-level="11.2" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html#abstract-classes"><i class="fa fa-check"></i><b>11.2</b> Abstract Classes</a></li>
+<li class="chapter" data-level="11.3" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html#multiple-inheritance"><i class="fa fa-check"></i><b>11.3</b> Multiple Inheritance?</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html"><i class="fa fa-check"></i><b>12</b> Week 5 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html#motivating-recursion"><i class="fa fa-check"></i><b>12.1</b> Motivating Recursion</a></li>
+<li class="chapter" data-level="12.2" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html#introduction-to-recursion"><i class="fa fa-check"></i><b>12.2</b> Introduction to Recursion</a></li>
+<li class="chapter" data-level="12.3" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html#implementing-the-merge-sort"><i class="fa fa-check"></i><b>12.3</b> Implementing the Merge Sort</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html"><i class="fa fa-check"></i><b>13</b> Week 5 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#pointers-and-arrays"><i class="fa fa-check"></i><b>13.1</b> Pointers and Arrays</a></li>
+<li class="chapter" data-level="13.2" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#infinite-recursion"><i class="fa fa-check"></i><b>13.2</b> Infinite Recursion</a></li>
+<li class="chapter" data-level="13.3" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#types-of-recursive-problems"><i class="fa fa-check"></i><b>13.3</b> Types of Recursive Problems</a></li>
+<li class="chapter" data-level="13.4" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#common-mistakes-in-recursion"><i class="fa fa-check"></i><b>13.4</b> Common Mistakes in Recursion</a></li>
+<li class="chapter" data-level="13.5" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#templates"><i class="fa fa-check"></i><b>13.5</b> Templates</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html"><i class="fa fa-check"></i><b>14</b> Week 6 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#more-issues-with-templates"><i class="fa fa-check"></i><b>14.1</b> More issues with Templates</a></li>
+<li class="chapter" data-level="14.2" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#template-classes"><i class="fa fa-check"></i><b>14.2</b> Template Classes</a></li>
+<li class="chapter" data-level="14.3" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#stl"><i class="fa fa-check"></i><b>14.3</b> STL</a></li>
+<li class="chapter" data-level="14.4" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#vector"><i class="fa fa-check"></i><b>14.4</b> Vector</a></li>
+<li class="chapter" data-level="14.5" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#linked-lists"><i class="fa fa-check"></i><b>14.5</b> Linked Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="week-6-wednesday-stl-and-algorithms.html"><a href="week-6-wednesday-stl-and-algorithms.html"><i class="fa fa-check"></i><b>15</b> Week 6 Wednesday: STL and Algorithms</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="week-6-wednesday-stl-and-algorithms.html"><a href="week-6-wednesday-stl-and-algorithms.html#standard-algorithms"><i class="fa fa-check"></i><b>15.1</b> Standard Algorithms</a></li>
+<li class="chapter" data-level="15.2" data-path="week-6-wednesday-stl-and-algorithms.html"><a href="week-6-wednesday-stl-and-algorithms.html#algorithm-analysis"><i class="fa fa-check"></i><b>15.2</b> Algorithm Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="week-7-monday-lecture.html"><a href="week-7-monday-lecture.html"><i class="fa fa-check"></i><b>16</b> Week 7 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="week-7-monday-lecture.html"><a href="week-7-monday-lecture.html#applications-of-algorithm-analysis-sorting"><i class="fa fa-check"></i><b>16.1</b> Applications of Algorithm Analysis: Sorting</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="week-7-wednesday-sorting-trees.html"><a href="week-7-wednesday-sorting-trees.html"><i class="fa fa-check"></i><b>17</b> Week 7 Wednesday: Sorting, Trees</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="week-7-wednesday-sorting-trees.html"><a href="week-7-wednesday-sorting-trees.html#improving-quicksort"><i class="fa fa-check"></i><b>17.1</b> Improving Quicksort</a></li>
+<li class="chapter" data-level="17.2" data-path="week-7-wednesday-sorting-trees.html"><a href="week-7-wednesday-sorting-trees.html#trees"><i class="fa fa-check"></i><b>17.2</b> Trees</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="week-8-monday-trees.html"><a href="week-8-monday-trees.html"><i class="fa fa-check"></i><b>18</b> Week 8 Monday: Trees</a></li>
+<li class="chapter" data-level="19" data-path="week-8-wednesday-hash-tables.html"><a href="week-8-wednesday-hash-tables.html"><i class="fa fa-check"></i><b>19</b> Week 8 Wednesday: Hash Tables</a></li>
+<li class="chapter" data-level="20" data-path="week-9-monday-lecture-more-hashtables.html"><a href="week-9-monday-lecture-more-hashtables.html"><i class="fa fa-check"></i><b>20</b> Week 9 Monday Lecture: More Hashtables</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="week-9-monday-lecture-more-hashtables.html"><a href="week-9-monday-lecture-more-hashtables.html#more-stl-data-structures"><i class="fa fa-check"></i><b>20.1</b> More STL Data Structures</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="week-9-wednesday-lecture-heaps.html"><a href="week-9-wednesday-lecture-heaps.html"><i class="fa fa-check"></i><b>21</b> Week 9 Wednesday Lecture: Heaps</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Computer Science 32: Data Structures</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week-2-wednesday-lecture" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Week 2 Wednesday Lecture</h1>
+<p>More on resource management. We use our definition of <code>String</code> from last time.</p>
+<div id="copying" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Copying</h2>
+<p>Consider the situation:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb19-1"><a href="week-2-wednesday-lecture.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> f<span class="op">(</span>String t<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb19-2"><a href="week-2-wednesday-lecture.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// ....</span></span>
+<span id="cb19-3"><a href="week-2-wednesday-lecture.html#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb19-4"><a href="week-2-wednesday-lecture.html#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="week-2-wednesday-lecture.html#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> h<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb19-6"><a href="week-2-wednesday-lecture.html#cb19-6" aria-hidden="true" tabindex="-1"></a>  String s<span class="op">(</span><span class="st">&quot;Hello&quot;</span><span class="op">);</span></span>
+<span id="cb19-7"><a href="week-2-wednesday-lecture.html#cb19-7" aria-hidden="true" tabindex="-1"></a>  f<span class="op">(</span>s<span class="op">);</span></span>
+<span id="cb19-8"><a href="week-2-wednesday-lecture.html#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">// ... </span></span>
+<span id="cb19-9"><a href="week-2-wednesday-lecture.html#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Here you pass by value. If you don’t tell C++ what to do, it will default to just copying each member. So if <code>f()</code> changes the pointer member, we could affect the original object. Another problem, is that at the end of <code>f()</code>, all local variables get deleted, so your pointer in <code>s</code> is now dangling. Even if you don’t touch <code>s</code> after, at the end of <code>h()</code> it will try to delete the object at the end of the pointer <strong>again</strong>, which is undefined behavior.</p>
+<p>Let’s make <code>t</code> have its own copy. We inform the compiler how to copy.</p>
+<p>We add</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb20-1"><a href="week-2-wednesday-lecture.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span><span class="op">:</span></span>
+<span id="cb20-2"><a href="week-2-wednesday-lecture.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  String<span class="op">(</span><span class="at">const</span> String<span class="op">&amp;</span> other<span class="op">);</span></span></code></pre></div>
+<p>to the class declaration. And then we define it:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb21-1"><a href="week-2-wednesday-lecture.html#cb21-1" aria-hidden="true" tabindex="-1"></a>String<span class="op">::</span>String<span class="op">(</span><span class="at">const</span> String<span class="op">&amp;</span> other<span class="op">)</span> </span>
+<span id="cb21-2"><a href="week-2-wednesday-lecture.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb21-3"><a href="week-2-wednesday-lecture.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_len</span> <span class="op">=</span> other<span class="op">.</span><span class="va">m_len</span><span class="op">;</span></span>
+<span id="cb21-4"><a href="week-2-wednesday-lecture.html#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_text</span> <span class="op">=</span> <span class="kw">new</span> <span class="dt">char</span><span class="op">[</span><span class="va">m_len</span> <span class="op">+</span> <span class="dv">1</span><span class="op">];</span></span>
+<span id="cb21-5"><a href="week-2-wednesday-lecture.html#cb21-5" aria-hidden="true" tabindex="-1"></a>  strcpy<span class="op">(</span><span class="va">m_text</span><span class="op">,</span> other<span class="op">.</span><span class="va">m_text</span><span class="op">);</span></span>
+<span id="cb21-6"><a href="week-2-wednesday-lecture.html#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>This is called the “copy constructor,” and C++ will use it by default when copying the object. It’s illegal to pass by value to the copy constructor (infinite recursion). You are allowed to have your copy constructor modify the original object.</p>
+<p>Ways to make a copy:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb22-1"><a href="week-2-wednesday-lecture.html#cb22-1" aria-hidden="true" tabindex="-1"></a>String x<span class="op">(</span>s<span class="op">);</span></span>
+<span id="cb22-2"><a href="week-2-wednesday-lecture.html#cb22-2" aria-hidden="true" tabindex="-1"></a>String x <span class="op">=</span> s<span class="op">;</span></span>
+<span id="cb22-3"><a href="week-2-wednesday-lecture.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">// and passing by value to a function</span></span></code></pre></div>
+<p>Note that you can talk about the private members of any String in the copy constructor (and any member function). They did this just to make it way easier to write copy constructors.</p>
+</div>
+<div id="assignment" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Assignment</h2>
+<p>Some misconceptions:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb23-1"><a href="week-2-wednesday-lecture.html#cb23-1" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span> t<span class="op">;</span> <span class="co">// assignment</span></span>
+<span id="cb23-2"><a href="week-2-wednesday-lecture.html#cb23-2" aria-hidden="true" tabindex="-1"></a>String x<span class="op">(</span>s<span class="op">);</span> <span class="co">// copy construction</span></span>
+<span id="cb23-3"><a href="week-2-wednesday-lecture.html#cb23-3" aria-hidden="true" tabindex="-1"></a>String x <span class="op">=</span> s<span class="op">;</span> <span class="co">// copy construction, NOT assignment</span></span></code></pre></div>
+<p>Consider:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb24-1"><a href="week-2-wednesday-lecture.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> h<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb24-2"><a href="week-2-wednesday-lecture.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  String s<span class="op">(</span><span class="st">&quot;Hello&quot;</span><span class="op">);</span></span>
+<span id="cb24-3"><a href="week-2-wednesday-lecture.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  f<span class="op">(</span>s<span class="op">);</span></span>
+<span id="cb24-4"><a href="week-2-wednesday-lecture.html#cb24-4" aria-hidden="true" tabindex="-1"></a>  String u<span class="op">(</span><span class="st">&quot;Wow&quot;</span><span class="op">);</span></span>
+<span id="cb24-5"><a href="week-2-wednesday-lecture.html#cb24-5" aria-hidden="true" tabindex="-1"></a>  u <span class="op">=</span> s<span class="op">;</span> <span class="co">// how do we deal with assignment? </span></span>
+<span id="cb24-6"><a href="week-2-wednesday-lecture.html#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>The default is to just assign each data member. Pointer will point to the same place in memory as the original - which is a problem, and there will be a memory leak in the original value of <code>u</code>.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb25-1"><a href="week-2-wednesday-lecture.html#cb25-1" aria-hidden="true" tabindex="-1"></a>u <span class="op">=</span> s<span class="op">;</span> <span class="co">// is shorthand for:</span></span>
+<span id="cb25-2"><a href="week-2-wednesday-lecture.html#cb25-2" aria-hidden="true" tabindex="-1"></a>u<span class="op">.</span><span class="kw">operator</span><span class="op">=(</span>s<span class="op">);</span></span></code></pre></div>
+<p>Which we implement as:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb26-1"><a href="week-2-wednesday-lecture.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span><span class="op">:</span></span>
+<span id="cb26-2"><a href="week-2-wednesday-lecture.html#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">void</span> <span class="kw">operator</span><span class="op">=(</span><span class="at">const</span> String<span class="op">&amp;</span> rhs<span class="op">);</span> <span class="co">// not quite the current convention</span></span></code></pre></div>
+<p>in the class declaration. And then we define it:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb27-1"><a href="week-2-wednesday-lecture.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> String<span class="op">::</span><span class="kw">operator</span><span class="op">=(</span><span class="at">const</span> String<span class="op">&amp;</span> rhs<span class="op">)</span> </span>
+<span id="cb27-2"><a href="week-2-wednesday-lecture.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb27-3"><a href="week-2-wednesday-lecture.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">delete</span> <span class="va">m_text</span><span class="op">;</span> <span class="co">// not quite right, we&#39;ll fix it later</span></span>
+<span id="cb27-4"><a href="week-2-wednesday-lecture.html#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_len</span> <span class="op">=</span> rhs<span class="op">.</span><span class="va">m_len</span><span class="op">;</span></span>
+<span id="cb27-5"><a href="week-2-wednesday-lecture.html#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_text</span> <span class="op">=</span> <span class="kw">new</span> <span class="dt">char</span><span class="op">[</span><span class="va">m_len</span> <span class="op">+</span> <span class="dv">1</span><span class="op">];</span></span>
+<span id="cb27-6"><a href="week-2-wednesday-lecture.html#cb27-6" aria-hidden="true" tabindex="-1"></a>  strcpy<span class="op">(</span><span class="va">m_text</span><span class="op">,</span> rhs<span class="op">.</span><span class="va">m_text</span><span class="op">);</span></span>
+<span id="cb27-7"><a href="week-2-wednesday-lecture.html#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>If we want this special behavior of built in types:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb28-1"><a href="week-2-wednesday-lecture.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> k <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb28-2"><a href="week-2-wednesday-lecture.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb28-3"><a href="week-2-wednesday-lecture.html#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> m<span class="op">;</span></span>
+<span id="cb28-4"><a href="week-2-wednesday-lecture.html#cb28-4" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> k <span class="op">=</span> n<span class="op">;</span></span></code></pre></div>
+<p>we modify our operator accordingly (return new value of LHS from an assignment statement).</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb29-1"><a href="week-2-wednesday-lecture.html#cb29-1" aria-hidden="true" tabindex="-1"></a>String String<span class="op">::</span><span class="kw">operator</span><span class="op">=(</span><span class="at">const</span> String<span class="op">&amp;</span> rhs<span class="op">)</span> </span>
+<span id="cb29-2"><a href="week-2-wednesday-lecture.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb29-3"><a href="week-2-wednesday-lecture.html#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">delete</span> <span class="va">m_text</span><span class="op">;</span> <span class="co">// not quite right, we&#39;ll fix it later</span></span>
+<span id="cb29-4"><a href="week-2-wednesday-lecture.html#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_len</span> <span class="op">=</span> rhs<span class="op">.</span><span class="va">m_len</span><span class="op">;</span></span>
+<span id="cb29-5"><a href="week-2-wednesday-lecture.html#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_text</span> <span class="op">=</span> <span class="kw">new</span> <span class="dt">char</span><span class="op">[</span><span class="va">m_len</span> <span class="op">+</span> <span class="dv">1</span><span class="op">];</span></span>
+<span id="cb29-6"><a href="week-2-wednesday-lecture.html#cb29-6" aria-hidden="true" tabindex="-1"></a>  strcpy<span class="op">(</span><span class="va">m_text</span><span class="op">,</span> rhs<span class="op">.</span><span class="va">m_text</span><span class="op">);</span></span>
+<span id="cb29-7"><a href="week-2-wednesday-lecture.html#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">*</span><span class="kw">this</span><span class="op">;</span> <span class="co">// return what the pointer points to</span></span>
+<span id="cb29-8"><a href="week-2-wednesday-lecture.html#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">// but this implementation is a bit inefficient</span></span>
+<span id="cb29-9"><a href="week-2-wednesday-lecture.html#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb29-10"><a href="week-2-wednesday-lecture.html#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="week-2-wednesday-lecture.html#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="week-2-wednesday-lecture.html#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="co">// here&#39;s the fix:</span></span>
+<span id="cb29-13"><a href="week-2-wednesday-lecture.html#cb29-13" aria-hidden="true" tabindex="-1"></a>String<span class="op">&amp;</span> String<span class="op">::</span><span class="kw">operator</span><span class="op">=(</span><span class="at">const</span> String<span class="op">&amp;</span> rhs<span class="op">)</span> </span>
+<span id="cb29-14"><a href="week-2-wednesday-lecture.html#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb29-15"><a href="week-2-wednesday-lecture.html#cb29-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">delete</span> <span class="va">m_text</span><span class="op">;</span> <span class="co">// not quite right, we&#39;ll fix it later</span></span>
+<span id="cb29-16"><a href="week-2-wednesday-lecture.html#cb29-16" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_len</span> <span class="op">=</span> rhs<span class="op">.</span><span class="va">m_len</span><span class="op">;</span></span>
+<span id="cb29-17"><a href="week-2-wednesday-lecture.html#cb29-17" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_text</span> <span class="op">=</span> <span class="kw">new</span> <span class="dt">char</span><span class="op">[</span><span class="va">m_len</span> <span class="op">+</span> <span class="dv">1</span><span class="op">];</span></span>
+<span id="cb29-18"><a href="week-2-wednesday-lecture.html#cb29-18" aria-hidden="true" tabindex="-1"></a>  strcpy<span class="op">(</span><span class="va">m_text</span><span class="op">,</span> rhs<span class="op">.</span><span class="va">m_text</span><span class="op">);</span></span>
+<span id="cb29-19"><a href="week-2-wednesday-lecture.html#cb29-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">*</span><span class="kw">this</span><span class="op">;</span> <span class="co">// return a reference to original</span></span>
+<span id="cb29-20"><a href="week-2-wednesday-lecture.html#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>But self-assignment could present a problem when you delete yourself before getting the value. Doing <code>strcpy</code> to itself is undefined behavior, probably keep reading and storing bytes until it gets to <code>\0</code>.</p>
+<p>We’ll revisit our function again:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb30-1"><a href="week-2-wednesday-lecture.html#cb30-1" aria-hidden="true" tabindex="-1"></a>String<span class="op">&amp;</span> String<span class="op">::</span><span class="kw">operator</span><span class="op">=(</span><span class="at">const</span> String<span class="op">&amp;</span> rhs<span class="op">)</span> </span>
+<span id="cb30-2"><a href="week-2-wednesday-lecture.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb30-3"><a href="week-2-wednesday-lecture.html#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span><span class="kw">this</span> <span class="op">!=</span> <span class="op">&amp;</span>rhs<span class="op">)</span></span>
+<span id="cb30-4"><a href="week-2-wednesday-lecture.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb30-5"><a href="week-2-wednesday-lecture.html#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">delete</span> <span class="va">m_text</span><span class="op">;</span></span>
+<span id="cb30-6"><a href="week-2-wednesday-lecture.html#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">m_len</span> <span class="op">=</span> rhs<span class="op">.</span><span class="va">m_len</span><span class="op">;</span></span>
+<span id="cb30-7"><a href="week-2-wednesday-lecture.html#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">m_text</span> <span class="op">=</span> <span class="kw">new</span> <span class="dt">char</span><span class="op">[</span><span class="va">m_len</span> <span class="op">+</span> <span class="dv">1</span><span class="op">];</span></span>
+<span id="cb30-8"><a href="week-2-wednesday-lecture.html#cb30-8" aria-hidden="true" tabindex="-1"></a>    strcpy<span class="op">(</span><span class="va">m_text</span><span class="op">,</span> rhs<span class="op">.</span><span class="va">m_text</span><span class="op">);</span></span>
+<span id="cb30-9"><a href="week-2-wednesday-lecture.html#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb30-10"><a href="week-2-wednesday-lecture.html#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">*</span><span class="kw">this</span><span class="op">;</span> <span class="co">// return a reference to original</span></span>
+<span id="cb30-11"><a href="week-2-wednesday-lecture.html#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>This is the classic way to write an assignment operator. But now there is a modern way. Note: our check for being the same is different than <code>*this != rhs</code>, because this compares the value of two strings. This is nice because it skips the work if it already has the right value, but it can be hard to check the equality of string value. Balance the cost between reassignment and checking if the value is the same. Generally we compare the pointers, not the values of the string.</p>
+<p>Another note: technically you could replace the assignment operator definition with the destructor and copy constructor. But this is hard and uses stuff we don’t know yet. The old way to avoid code duplication was to write a private helper function.</p>
+<p>Here’s another problem: in our current implementation of the assignment operator, we do serious damage to the left-hand side before we know that our operation will succeed. This can lead to undefined behavior later in the program. The following fix is just a cleaner, modern way to write assignment operators.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb31-1"><a href="week-2-wednesday-lecture.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> String</span>
+<span id="cb31-2"><a href="week-2-wednesday-lecture.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb31-3"><a href="week-2-wednesday-lecture.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span><span class="op">:</span></span>
+<span id="cb31-4"><a href="week-2-wednesday-lecture.html#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">//...</span></span>
+<span id="cb31-5"><a href="week-2-wednesday-lecture.html#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">void</span> swap<span class="op">(</span>String<span class="op">&amp;</span> other<span class="op">);</span></span>
+<span id="cb31-6"><a href="week-2-wednesday-lecture.html#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">//...</span></span>
+<span id="cb31-7"><a href="week-2-wednesday-lecture.html#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="week-2-wednesday-lecture.html#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span><span class="op">:</span></span>
+<span id="cb31-9"><a href="week-2-wednesday-lecture.html#cb31-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">//...</span></span>
+<span id="cb31-10"><a href="week-2-wednesday-lecture.html#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb31-11"><a href="week-2-wednesday-lecture.html#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="week-2-wednesday-lecture.html#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> String<span class="op">::</span>swap<span class="op">(</span>String<span class="op">&amp;</span> other<span class="op">)</span></span>
+<span id="cb31-13"><a href="week-2-wednesday-lecture.html#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb31-14"><a href="week-2-wednesday-lecture.html#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">// simple operations like this can&#39;t throw exceptions</span></span>
+<span id="cb31-15"><a href="week-2-wednesday-lecture.html#cb31-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">// I decided to implement this more concretely</span></span>
+<span id="cb31-16"><a href="week-2-wednesday-lecture.html#cb31-16" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> temp_len <span class="op">=</span> <span class="va">m_len</span><span class="op">;</span></span>
+<span id="cb31-17"><a href="week-2-wednesday-lecture.html#cb31-17" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_len</span> <span class="op">=</span> other<span class="op">.</span><span class="va">m_len</span></span>
+<span id="cb31-18"><a href="week-2-wednesday-lecture.html#cb31-18" aria-hidden="true" tabindex="-1"></a>  other<span class="op">.</span><span class="va">m_len</span> <span class="op">=</span> temp_len<span class="op">;</span></span>
+<span id="cb31-19"><a href="week-2-wednesday-lecture.html#cb31-19" aria-hidden="true" tabindex="-1"></a>  <span class="dt">char</span><span class="op">*</span> temp_textptr <span class="op">=</span> <span class="va">m_text</span><span class="op">;</span></span>
+<span id="cb31-20"><a href="week-2-wednesday-lecture.html#cb31-20" aria-hidden="true" tabindex="-1"></a>  <span class="va">m_text</span> <span class="op">=</span> other<span class="op">.</span><span class="va">m_text</span><span class="op">;</span></span>
+<span id="cb31-21"><a href="week-2-wednesday-lecture.html#cb31-21" aria-hidden="true" tabindex="-1"></a>  other<span class="op">.</span><span class="va">m_text</span> <span class="op">=</span> temp_textptr<span class="op">;</span></span>
+<span id="cb31-22"><a href="week-2-wednesday-lecture.html#cb31-22" aria-hidden="true" tabindex="-1"></a>  <span class="co">// and then local temp variables are cleaned up</span></span>
+<span id="cb31-23"><a href="week-2-wednesday-lecture.html#cb31-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb31-24"><a href="week-2-wednesday-lecture.html#cb31-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-25"><a href="week-2-wednesday-lecture.html#cb31-25" aria-hidden="true" tabindex="-1"></a>String<span class="op">&amp;</span> String<span class="op">::</span><span class="kw">operator</span><span class="op">=(</span><span class="at">const</span> String<span class="op">&amp;</span> rhs<span class="op">)</span> </span>
+<span id="cb31-26"><a href="week-2-wednesday-lecture.html#cb31-26" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb31-27"><a href="week-2-wednesday-lecture.html#cb31-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span><span class="kw">this</span> <span class="op">!=</span> <span class="op">&amp;</span>rhs<span class="op">)</span></span>
+<span id="cb31-28"><a href="week-2-wednesday-lecture.html#cb31-28" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb31-29"><a href="week-2-wednesday-lecture.html#cb31-29" aria-hidden="true" tabindex="-1"></a>    String temp<span class="op">(</span>rhs<span class="op">);</span> <span class="co">// will fail here if there isn&#39;t memory</span></span>
+<span id="cb31-30"><a href="week-2-wednesday-lecture.html#cb31-30" aria-hidden="true" tabindex="-1"></a>    swap<span class="op">(</span>temp<span class="op">);</span> <span class="co">// so lhs is protected</span></span>
+<span id="cb31-31"><a href="week-2-wednesday-lecture.html#cb31-31" aria-hidden="true" tabindex="-1"></a>    <span class="co">// note that the above is this-&gt;swap(temp);</span></span>
+<span id="cb31-32"><a href="week-2-wednesday-lecture.html#cb31-32" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb31-33"><a href="week-2-wednesday-lecture.html#cb31-33" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="op">*</span><span class="kw">this</span><span class="op">;</span> <span class="co">// return a reference to original</span></span>
+<span id="cb31-34"><a href="week-2-wednesday-lecture.html#cb31-34" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>The above solution also leverages the code written in the copy constructor to prevent code duplication.</p>
+</div>
+<div id="aliasing" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Aliasing</h2>
+<p>An “alias” is two names for the same object. Ask yourself: is my code correct if these names refer to the same value?</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb32-1"><a href="week-2-wednesday-lecture.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> transfer<span class="op">(</span>Account<span class="op">&amp;</span> from<span class="op">,</span> Account<span class="op">&amp;</span> to<span class="op">,</span> <span class="dt">double</span> amt<span class="op">)</span></span>
+<span id="cb32-2"><a href="week-2-wednesday-lecture.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb32-3"><a href="week-2-wednesday-lecture.html#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span>amt <span class="op">&gt;</span> from<span class="op">.</span>balance<span class="op">())</span></span>
+<span id="cb32-4"><a href="week-2-wednesday-lecture.html#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb32-5"><a href="week-2-wednesday-lecture.html#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">//... error</span></span>
+<span id="cb32-6"><a href="week-2-wednesday-lecture.html#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span> <span class="cf">else</span></span>
+<span id="cb32-7"><a href="week-2-wednesday-lecture.html#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb32-8"><a href="week-2-wednesday-lecture.html#cb32-8" aria-hidden="true" tabindex="-1"></a>    from<span class="op">.</span>debit<span class="op">(</span>amt<span class="op">);</span></span>
+<span id="cb32-9"><a href="week-2-wednesday-lecture.html#cb32-9" aria-hidden="true" tabindex="-1"></a>    to<span class="op">.</span>credit<span class="op">(</span>amt<span class="op">);</span></span>
+<span id="cb32-10"><a href="week-2-wednesday-lecture.html#cb32-10" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb32-11"><a href="week-2-wednesday-lecture.html#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Here there is an issue of aliasing. When you have two references to the same type, aliasing might occur. Nothing catastrophic happens here, but it treats a self-to-self transfer like a standard transfer, so it will throw errors, incur fees, etc. Make sure your implementation does the right thing in the case of aliasing.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb33-1"><a href="week-2-wednesday-lecture.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> transfer<span class="op">(</span>Account<span class="op">&amp;</span> from<span class="op">,</span> Account<span class="op">&amp;</span> to<span class="op">,</span> <span class="dt">double</span> amt<span class="op">)</span></span>
+<span id="cb33-2"><a href="week-2-wednesday-lecture.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb33-3"><a href="week-2-wednesday-lecture.html#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(&amp;</span>from <span class="op">!=</span> <span class="op">&amp;</span>to<span class="op">)</span></span>
+<span id="cb33-4"><a href="week-2-wednesday-lecture.html#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb33-5"><a href="week-2-wednesday-lecture.html#cb33-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>amt <span class="op">&gt;</span> from<span class="op">.</span>balance<span class="op">())</span></span>
+<span id="cb33-6"><a href="week-2-wednesday-lecture.html#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb33-7"><a href="week-2-wednesday-lecture.html#cb33-7" aria-hidden="true" tabindex="-1"></a>      <span class="co">//... error</span></span>
+<span id="cb33-8"><a href="week-2-wednesday-lecture.html#cb33-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span></span>
+<span id="cb33-9"><a href="week-2-wednesday-lecture.html#cb33-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb33-10"><a href="week-2-wednesday-lecture.html#cb33-10" aria-hidden="true" tabindex="-1"></a>      from<span class="op">.</span>debit<span class="op">(</span>amt<span class="op">);</span></span>
+<span id="cb33-11"><a href="week-2-wednesday-lecture.html#cb33-11" aria-hidden="true" tabindex="-1"></a>      to<span class="op">.</span>credit<span class="op">(</span>amt<span class="op">);</span></span>
+<span id="cb33-12"><a href="week-2-wednesday-lecture.html#cb33-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb33-13"><a href="week-2-wednesday-lecture.html#cb33-13" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb33-14"><a href="week-2-wednesday-lecture.html#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-2-monday-qa.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-2-wednesday-qa.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["cs32_notes.pdf", "cs32_notes.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

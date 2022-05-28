@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>18 Week 8 Monday: Trees | Computer Science 32: Data Structures</title>
+  <meta name="description" content="Computer Science notes" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="18 Week 8 Monday: Trees | Computer Science 32: Data Structures" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Computer Science notes" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="18 Week 8 Monday: Trees | Computer Science 32: Data Structures" />
+  
+  <meta name="twitter:description" content="Computer Science notes" />
+  
+
+<meta name="author" content="Jason Lim" />
+
+
+<meta name="date" content="2021-06-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-7-wednesday-sorting-trees.html"/>
+<link rel="next" href="week-8-wednesday-hash-tables.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">CS32 Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html"><i class="fa fa-check"></i><b>2</b> Week 1 Wednesday Pre-Lecture</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#why-we-dont-write-public-data-members"><i class="fa fa-check"></i><b>2.1</b> Why we don’t write public data members</a></li>
+<li class="chapter" data-level="2.2" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#const-member-functions"><i class="fa fa-check"></i><b>2.2</b> <code>const</code> Member Functions</a></li>
+<li class="chapter" data-level="2.3" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#alternate-constructor-stucture"><i class="fa fa-check"></i><b>2.3</b> Alternate Constructor Stucture</a></li>
+<li class="chapter" data-level="2.4" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#order-of-construction"><i class="fa fa-check"></i><b>2.4</b> Order of Construction</a></li>
+<li class="chapter" data-level="2.5" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#separate-compilation"><i class="fa fa-check"></i><b>2.5</b> Separate Compilation</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="week-1-wednesday-pre-lecture.html"><a href="week-1-wednesday-pre-lecture.html#header-file-include-practices"><i class="fa fa-check"></i><b>2.5.1</b> Header File Include Practices</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html"><i class="fa fa-check"></i><b>3</b> Week 1 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html#constants-pointers-and-constant-pointers"><i class="fa fa-check"></i><b>3.1</b> Constants, pointers, and constant pointers</a></li>
+<li class="chapter" data-level="3.2" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html#default-constructors"><i class="fa fa-check"></i><b>3.2</b> Default Constructors</a></li>
+<li class="chapter" data-level="3.3" data-path="week-1-wednesday-lecture.html"><a href="week-1-wednesday-lecture.html#new-and-variable-lifecycle"><i class="fa fa-check"></i><b>3.3</b> <code>new</code> and Variable Lifecycle</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html"><i class="fa fa-check"></i><b>4</b> Week 2 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#separate-compilation-issues"><i class="fa fa-check"></i><b>4.1</b> Separate Compilation Issues</a></li>
+<li class="chapter" data-level="4.2" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#example-project"><i class="fa fa-check"></i><b>4.2</b> Example Project</a></li>
+<li class="chapter" data-level="4.3" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#include-guard-rules"><i class="fa fa-check"></i><b>4.3</b> Include Guard Rules</a></li>
+<li class="chapter" data-level="4.4" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#pointer-example"><i class="fa fa-check"></i><b>4.4</b> Pointer Example</a></li>
+<li class="chapter" data-level="4.5" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#incomplete-type-declaration"><i class="fa fa-check"></i><b>4.5</b> Incomplete Type Declaration</a></li>
+<li class="chapter" data-level="4.6" data-path="week-2-monday-lecture.html"><a href="week-2-monday-lecture.html#resource-management"><i class="fa fa-check"></i><b>4.6</b> Resource Management</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="week-2-monday-qa.html"><a href="week-2-monday-qa.html"><i class="fa fa-check"></i><b>5</b> Week 2 Monday Q&amp;A</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="week-2-monday-qa.html"><a href="week-2-monday-qa.html#destructor-cycle"><i class="fa fa-check"></i><b>5.1</b> Destructor Cycle</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html"><i class="fa fa-check"></i><b>6</b> Week 2 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html#copying"><i class="fa fa-check"></i><b>6.1</b> Copying</a></li>
+<li class="chapter" data-level="6.2" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html#assignment"><i class="fa fa-check"></i><b>6.2</b> Assignment</a></li>
+<li class="chapter" data-level="6.3" data-path="week-2-wednesday-lecture.html"><a href="week-2-wednesday-lecture.html#aliasing"><i class="fa fa-check"></i><b>6.3</b> Aliasing</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="week-2-wednesday-qa.html"><a href="week-2-wednesday-qa.html"><i class="fa fa-check"></i><b>7</b> Week 2 Wednesday Q&amp;A</a></li>
+<li class="chapter" data-level="8" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html"><i class="fa fa-check"></i><b>8</b> Week 3 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#introduction-to-linked-lists"><i class="fa fa-check"></i><b>8.1</b> Introduction to Linked Lists</a></li>
+<li class="chapter" data-level="8.2" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#first-link-list-implementation"><i class="fa fa-check"></i><b>8.2</b> First Link List Implementation</a></li>
+<li class="chapter" data-level="8.3" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#linked-list-iteration"><i class="fa fa-check"></i><b>8.3</b> Linked List Iteration</a></li>
+<li class="chapter" data-level="8.4" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#finding-a-specific-value"><i class="fa fa-check"></i><b>8.4</b> Finding a Specific value</a></li>
+<li class="chapter" data-level="8.5" data-path="week-3-monday-lecture.html"><a href="week-3-monday-lecture.html#getting-rid-of-a-node"><i class="fa fa-check"></i><b>8.5</b> Getting Rid of a Node</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html"><i class="fa fa-check"></i><b>9</b> Week 3 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#stacks-in-c"><i class="fa fa-check"></i><b>9.1</b> Stacks in c++</a></li>
+<li class="chapter" data-level="9.2" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#queues-in-c"><i class="fa fa-check"></i><b>9.2</b> Queues in c++</a></li>
+<li class="chapter" data-level="9.3" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#motivating-example-for-stacks"><i class="fa fa-check"></i><b>9.3</b> Motivating Example for Stacks</a></li>
+<li class="chapter" data-level="9.4" data-path="week-3-wednesday-lecture.html"><a href="week-3-wednesday-lecture.html#implementing-stacks-with-arrayslists"><i class="fa fa-check"></i><b>9.4</b> Implementing Stacks with Arrays/Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html"><i class="fa fa-check"></i><b>10</b> Week 4 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#implementing-queue-with-an-array"><i class="fa fa-check"></i><b>10.1</b> Implementing Queue with an Array</a></li>
+<li class="chapter" data-level="10.2" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#polymorphism"><i class="fa fa-check"></i><b>10.2</b> Polymorphism</a></li>
+<li class="chapter" data-level="10.3" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#implementation-of-polymorphism"><i class="fa fa-check"></i><b>10.3</b> Implementation of Polymorphism</a></li>
+<li class="chapter" data-level="10.4" data-path="week-4-monday-lecture.html"><a href="week-4-monday-lecture.html#static-and-dynamic-binding"><i class="fa fa-check"></i><b>10.4</b> Static and Dynamic Binding</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html"><i class="fa fa-check"></i><b>11</b> Week 4 Wednesday</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html#dynamic-lookup"><i class="fa fa-check"></i><b>11.1</b> Dynamic Lookup</a></li>
+<li class="chapter" data-level="11.2" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html#abstract-classes"><i class="fa fa-check"></i><b>11.2</b> Abstract Classes</a></li>
+<li class="chapter" data-level="11.3" data-path="week-4-wednesday.html"><a href="week-4-wednesday.html#multiple-inheritance"><i class="fa fa-check"></i><b>11.3</b> Multiple Inheritance?</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html"><i class="fa fa-check"></i><b>12</b> Week 5 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html#motivating-recursion"><i class="fa fa-check"></i><b>12.1</b> Motivating Recursion</a></li>
+<li class="chapter" data-level="12.2" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html#introduction-to-recursion"><i class="fa fa-check"></i><b>12.2</b> Introduction to Recursion</a></li>
+<li class="chapter" data-level="12.3" data-path="week-5-monday-lecture.html"><a href="week-5-monday-lecture.html#implementing-the-merge-sort"><i class="fa fa-check"></i><b>12.3</b> Implementing the Merge Sort</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html"><i class="fa fa-check"></i><b>13</b> Week 5 Wednesday Lecture</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#pointers-and-arrays"><i class="fa fa-check"></i><b>13.1</b> Pointers and Arrays</a></li>
+<li class="chapter" data-level="13.2" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#infinite-recursion"><i class="fa fa-check"></i><b>13.2</b> Infinite Recursion</a></li>
+<li class="chapter" data-level="13.3" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#types-of-recursive-problems"><i class="fa fa-check"></i><b>13.3</b> Types of Recursive Problems</a></li>
+<li class="chapter" data-level="13.4" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#common-mistakes-in-recursion"><i class="fa fa-check"></i><b>13.4</b> Common Mistakes in Recursion</a></li>
+<li class="chapter" data-level="13.5" data-path="week-5-wednesday-lecture.html"><a href="week-5-wednesday-lecture.html#templates"><i class="fa fa-check"></i><b>13.5</b> Templates</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html"><i class="fa fa-check"></i><b>14</b> Week 6 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#more-issues-with-templates"><i class="fa fa-check"></i><b>14.1</b> More issues with Templates</a></li>
+<li class="chapter" data-level="14.2" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#template-classes"><i class="fa fa-check"></i><b>14.2</b> Template Classes</a></li>
+<li class="chapter" data-level="14.3" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#stl"><i class="fa fa-check"></i><b>14.3</b> STL</a></li>
+<li class="chapter" data-level="14.4" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#vector"><i class="fa fa-check"></i><b>14.4</b> Vector</a></li>
+<li class="chapter" data-level="14.5" data-path="week-6-monday-lecture.html"><a href="week-6-monday-lecture.html#linked-lists"><i class="fa fa-check"></i><b>14.5</b> Linked Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="week-6-wednesday-stl-and-algorithms.html"><a href="week-6-wednesday-stl-and-algorithms.html"><i class="fa fa-check"></i><b>15</b> Week 6 Wednesday: STL and Algorithms</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="week-6-wednesday-stl-and-algorithms.html"><a href="week-6-wednesday-stl-and-algorithms.html#standard-algorithms"><i class="fa fa-check"></i><b>15.1</b> Standard Algorithms</a></li>
+<li class="chapter" data-level="15.2" data-path="week-6-wednesday-stl-and-algorithms.html"><a href="week-6-wednesday-stl-and-algorithms.html#algorithm-analysis"><i class="fa fa-check"></i><b>15.2</b> Algorithm Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="week-7-monday-lecture.html"><a href="week-7-monday-lecture.html"><i class="fa fa-check"></i><b>16</b> Week 7 Monday Lecture</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="week-7-monday-lecture.html"><a href="week-7-monday-lecture.html#applications-of-algorithm-analysis-sorting"><i class="fa fa-check"></i><b>16.1</b> Applications of Algorithm Analysis: Sorting</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="week-7-wednesday-sorting-trees.html"><a href="week-7-wednesday-sorting-trees.html"><i class="fa fa-check"></i><b>17</b> Week 7 Wednesday: Sorting, Trees</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="week-7-wednesday-sorting-trees.html"><a href="week-7-wednesday-sorting-trees.html#improving-quicksort"><i class="fa fa-check"></i><b>17.1</b> Improving Quicksort</a></li>
+<li class="chapter" data-level="17.2" data-path="week-7-wednesday-sorting-trees.html"><a href="week-7-wednesday-sorting-trees.html#trees"><i class="fa fa-check"></i><b>17.2</b> Trees</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="week-8-monday-trees.html"><a href="week-8-monday-trees.html"><i class="fa fa-check"></i><b>18</b> Week 8 Monday: Trees</a></li>
+<li class="chapter" data-level="19" data-path="week-8-wednesday-hash-tables.html"><a href="week-8-wednesday-hash-tables.html"><i class="fa fa-check"></i><b>19</b> Week 8 Wednesday: Hash Tables</a></li>
+<li class="chapter" data-level="20" data-path="week-9-monday-lecture-more-hashtables.html"><a href="week-9-monday-lecture-more-hashtables.html"><i class="fa fa-check"></i><b>20</b> Week 9 Monday Lecture: More Hashtables</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="week-9-monday-lecture-more-hashtables.html"><a href="week-9-monday-lecture-more-hashtables.html#more-stl-data-structures"><i class="fa fa-check"></i><b>20.1</b> More STL Data Structures</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="week-9-wednesday-lecture-heaps.html"><a href="week-9-wednesday-lecture-heaps.html"><i class="fa fa-check"></i><b>21</b> Week 9 Wednesday Lecture: Heaps</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Computer Science 32: Data Structures</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week-8-monday-trees" class="section level1" number="18">
+<h1><span class="header-section-number">18</span> Week 8 Monday: Trees</h1>
+<p>We were working with this structure this time:</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb94-1"><a href="week-8-monday-trees.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;vector&gt;</span></span>
+<span id="cb94-2"><a href="week-8-monday-trees.html#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
+<span id="cb94-3"><a href="week-8-monday-trees.html#cb94-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb94-4"><a href="week-8-monday-trees.html#cb94-4" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Node</span>
+<span id="cb94-5"><a href="week-8-monday-trees.html#cb94-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb94-6"><a href="week-8-monday-trees.html#cb94-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>string<span class="op"> </span>name<span class="op">;</span></span>
+<span id="cb94-7"><a href="week-8-monday-trees.html#cb94-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>vector<span class="op">&lt;</span>Node<span class="op">*&gt;</span> children<span class="op">;</span></span>
+<span id="cb94-8"><a href="week-8-monday-trees.html#cb94-8" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb94-9"><a href="week-8-monday-trees.html#cb94-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb94-10"><a href="week-8-monday-trees.html#cb94-10" aria-hidden="true" tabindex="-1"></a>Node<span class="op">*</span> root<span class="op">;</span></span></code></pre></div>
+<p>What we did to print before was called a preorder traversal. You process the node before processing the subtrees. The opposite is postorder traversal must process all the subtrees before processing the current node. If we did our printing in postorder, we would get the same output in the opposite order.</p>
+<p>Early in CS, people didn’t really like to use dynamically allocated arrays for children pointers. You can represent every tree by nodes with exactly two possible children, called a <strong>binary tree</strong>.</p>
+<p>Let’s look at the data structure:</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb95-1"><a href="week-8-monday-trees.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Node</span>
+<span id="cb95-2"><a href="week-8-monday-trees.html#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb95-3"><a href="week-8-monday-trees.html#cb95-3" aria-hidden="true" tabindex="-1"></a>    string name<span class="op">;</span></span>
+<span id="cb95-4"><a href="week-8-monday-trees.html#cb95-4" aria-hidden="true" tabindex="-1"></a>    Node<span class="op">*</span> right<span class="op">;</span></span>
+<span id="cb95-5"><a href="week-8-monday-trees.html#cb95-5" aria-hidden="true" tabindex="-1"></a>    Node<span class="op">*</span> left<span class="op">;</span></span>
+<span id="cb95-6"><a href="week-8-monday-trees.html#cb95-6" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
+<p>Note that the right and left subtrees are distinct. So there are 3 possible distinct two node trees and 5 distinction 5 node trees.</p>
+<p>Doesn’t this kinda look like a doubly linked list? Yes, but there are requirements about where the pointers point. Doubly-linked always point back to each other. Trees can’t point back (sometimes you have a pointer to the parent just to be helpful, but this is not technically a part of the structure of the tree).</p>
+<p>You can express the original tree with a binary tree by making all left pointers two first child, all right pointers to siblings. We then call the two pointers the oldest child pointer and younger sibling pointer.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb96-1"><a href="week-8-monday-trees.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Node</span>
+<span id="cb96-2"><a href="week-8-monday-trees.html#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb96-3"><a href="week-8-monday-trees.html#cb96-3" aria-hidden="true" tabindex="-1"></a>    string name<span class="op">;</span></span>
+<span id="cb96-4"><a href="week-8-monday-trees.html#cb96-4" aria-hidden="true" tabindex="-1"></a>    Node<span class="op">*</span> oldestChild<span class="op">;</span></span>
+<span id="cb96-5"><a href="week-8-monday-trees.html#cb96-5" aria-hidden="true" tabindex="-1"></a>    Node<span class="op">*</span> nextYoungerSibling<span class="op">;</span></span>
+<span id="cb96-6"><a href="week-8-monday-trees.html#cb96-6" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
+<p>A <strong>binary search tree (BST)</strong> is empty, or a node with a left binary search tree and a right binary search tree such that the value at every node in the left subtree is &lt;= the value at this node, and the value at every node in the right subtree is &gt;= the value at this node</p>
+<p>We can search through this tree really quickly (given the tree is relatively balanced). You can guess the value from <span class="math inline">\(N\)</span> items in <span class="math inline">\(\log_2 N\)</span> guesses. You can also do binary search on an array or vector, but binary trees are faster for insertions and deletion. You can insert and delete here in <span class="math inline">\(\log N\)</span> time, whereas this operation is linear time in indexable data types.</p>
+<p>Insertion is a tree algorithm, but you only follow one path so you don’t really need recursion.</p>
+<p>Deleting is easy for a leaf node. Also pretty straightforward for a node with one child. The whole subtree is less than or greater than the deleted node’s parent.</p>
+<p>Two children that aren’t empty is tougher. Promote one child to replace the deleted parent. You go left one then as far right as you can go, or one step right and far to the left as you can go. Both are good candidates for the promotion.</p>
+<p>You keep good performance if the tree stays balanced as you insert and delete.</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb97-1"><a href="week-8-monday-trees.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co">// prints in alphabetical order</span></span>
+<span id="cb97-2"><a href="week-8-monday-trees.html#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> printTree<span class="op">(</span><span class="at">const</span> Node<span class="op">*</span> p<span class="op">)</span></span>
+<span id="cb97-3"><a href="week-8-monday-trees.html#cb97-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb97-4"><a href="week-8-monday-trees.html#cb97-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>p <span class="op">!=</span> <span class="kw">nullptr</span><span class="op">)</span></span>
+<span id="cb97-5"><a href="week-8-monday-trees.html#cb97-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb97-6"><a href="week-8-monday-trees.html#cb97-6" aria-hidden="true" tabindex="-1"></a>        printTree<span class="op">(</span>p<span class="op">-&gt;</span>left<span class="op">);</span></span>
+<span id="cb97-7"><a href="week-8-monday-trees.html#cb97-7" aria-hidden="true" tabindex="-1"></a>        cout <span class="op">&lt;&lt;</span> p<span class="op">-&gt;</span> name <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb97-8"><a href="week-8-monday-trees.html#cb97-8" aria-hidden="true" tabindex="-1"></a>        printTree<span class="op">(</span>p<span class="op">-&gt;</span>right<span class="op">);</span></span>
+<span id="cb97-9"><a href="week-8-monday-trees.html#cb97-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb97-10"><a href="week-8-monday-trees.html#cb97-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>This algorithm is neither preorder or postorder. The concept of ‘between’ makes sense for binary trees (exclusively). New term for this is <strong>inorder traversal</strong>.</p>
+<p>How to fill the tree? We know the root must have been the first item inserted. It’s children must have been the next. You don’t know the exact order of insertion by looking at the final tree.</p>
+<p>You could get some really bad orderings. If you inserted a sorted list into a BST, you get awful search and other operation efficiency. On average, you get something 6x as long as a perfectly balanced tree.</p>
+<p>One solution (non-naive insertion) is an <strong>AVL tree</strong>. At every node, the height of the left and right subtree can differ by no more than one. You keep track of the heights of subtrees, and if an insertion would create an imbalance, you must do a reordering. It’s still <span class="math inline">\(\log N\)</span> for insertion and deletion but with a higher constant of proportionality for rebalancing.</p>
+<p>Another solution <strong>2-3 Tree</strong>. Nodes with 3 children have 2 values, nodes with 2 children have 1 value. Nodes to the right of a 2-value node are less than both values? (there are complicated rules for this). Every leaf node is at the same height. There is more tricky insertion and deletion but we won’t get into these details. Still <span class="math inline">\(\log N\)</span> (even at the worst case) but lower constant of proportionality. Also sometimes <span class="math inline">\(\log_3 N\)</span>.</p>
+<p>This led into <strong>2-3-4 trees</strong> and even higher numbers (because they all reduce height). In a <strong>2-3-4 tree</strong>, you can represent direct analogies for 1, 2, 3- value nodes in binary tree form. In order to pull this off you need to store a little bit more binary information for each node about what exact BST analogue it has. Instead of true/false they choose red/black. Thus the BST analogue of a 2-3-4 tree is called a <strong>red-black tree</strong>. There’s some complicated stuff to transform between the structures. The tree will generally be balanced enough to stay faced. Turns out red-black is faster than 2-3-4 and AVL so most standard libraries use this.</p>
+<p>CPP library types that do quick lookups:</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb98-1"><a href="week-8-monday-trees.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;set&gt;</span></span>
+<span id="cb98-2"><a href="week-8-monday-trees.html#cb98-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-3"><a href="week-8-monday-trees.html#cb98-3" aria-hidden="true" tabindex="-1"></a>set<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> s<span class="op">;</span></span>
+<span id="cb98-4"><a href="week-8-monday-trees.html#cb98-4" aria-hidden="true" tabindex="-1"></a>s<span class="op">.</span>insert<span class="op">(</span><span class="dv">10</span><span class="op">);</span></span>
+<span id="cb98-5"><a href="week-8-monday-trees.html#cb98-5" aria-hidden="true" tabindex="-1"></a>s<span class="op">.</span>insert<span class="op">(</span><span class="dv">30</span><span class="op">);</span></span>
+<span id="cb98-6"><a href="week-8-monday-trees.html#cb98-6" aria-hidden="true" tabindex="-1"></a>s<span class="op">.</span>insert<span class="op">(</span><span class="dv">10</span><span class="op">);</span> <span class="co">//doesn&#39;t insert</span></span>
+<span id="cb98-7"><a href="week-8-monday-trees.html#cb98-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-8"><a href="week-8-monday-trees.html#cb98-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>s<span class="op">.</span>find<span class="op">(</span><span class="dv">20</span><span class="op">)</span> <span class="op">==</span> s<span class="op">.</span>end<span class="op">())</span></span>
+<span id="cb98-9"><a href="week-8-monday-trees.html#cb98-9" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb98-10"><a href="week-8-monday-trees.html#cb98-10" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">&quot;20 is not in the set&quot;</span><span class="op">;</span></span>
+<span id="cb98-11"><a href="week-8-monday-trees.html#cb98-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb98-12"><a href="week-8-monday-trees.html#cb98-12" aria-hidden="true" tabindex="-1"></a>s<span class="op">.</span>insert<span class="op">(</span><span class="dv">5</span><span class="op">);</span></span>
+<span id="cb98-13"><a href="week-8-monday-trees.html#cb98-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span><span class="op">(</span>set<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;::</span>iterator p <span class="op">=</span> s<span class="op">.</span>begin<span class="op">();</span> p <span class="op">!=</span> s<span class="op">.</span>end<span class="op">();</span> p<span class="op">++)</span></span>
+<span id="cb98-14"><a href="week-8-monday-trees.html#cb98-14" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb98-15"><a href="week-8-monday-trees.html#cb98-15" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> <span class="op">*</span>p <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb98-16"><a href="week-8-monday-trees.html#cb98-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="co">//will write 5 10 30</span></span>
+<span id="cb98-17"><a href="week-8-monday-trees.html#cb98-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-18"><a href="week-8-monday-trees.html#cb98-18" aria-hidden="true" tabindex="-1"></a>s<span class="op">.</span>erase<span class="op">(</span><span class="dv">30</span><span class="op">);</span></span></code></pre></div>
+<p>A set will visit items in increasing order. The type of item in the set must have a less than operator (and it must meet the logical mathematical less-than results). Note that you don’t need <code>==</code> to use a set. It tells if an item is a duplicate if <code>x &lt;= y</code> and <code>y &lt;= x</code>. So be careful with how you define the less than operator.</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb99-1"><a href="week-8-monday-trees.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;set&gt;</span></span>
+<span id="cb99-2"><a href="week-8-monday-trees.html#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="co">//also same header</span></span>
+<span id="cb99-3"><a href="week-8-monday-trees.html#cb99-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-4"><a href="week-8-monday-trees.html#cb99-4" aria-hidden="true" tabindex="-1"></a>multiset<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> s<span class="op">;</span></span>
+<span id="cb99-5"><a href="week-8-monday-trees.html#cb99-5" aria-hidden="true" tabindex="-1"></a><span class="co">//s allows duplicates, still maintains order</span></span></code></pre></div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-7-wednesday-sorting-trees.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-8-wednesday-hash-tables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["cs32_notes.pdf", "cs32_notes.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
